@@ -1,0 +1,6 @@
+{
+  "tripSpot01": { "tripId":"trip01", "spotId":"spot05"},
+  "tripSpot02": { "tripId":"trip02", "spotId":"spot09"},
+  "tripSpot03": { "tripId":"trip03", "spotId":"spot15"},
+  "tripSpot04": { "tripId":"trip04", "spotId":"spot01"}
+}

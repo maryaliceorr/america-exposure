@@ -1,0 +1,20 @@
+{
+	"trip01": {
+	    "name": "Utah 2019",
+	    "notes": "I will be going to Arches National Park and the Grand Canyon",
+      "date": "Early Fall 2019",
+      "uid": "12345"
+	},
+	  "trip02": {
+	    "name": "Colorado 2018",
+	    "notes": "blah blah blah",
+      "date": "October 2018",
+      "uid": "23456"
+  },
+  "trip03": {
+    "name": "Kentucky Caverns",
+    "notes": "blah here we go",
+    "date": "September 2020",
+    "uid": "34567"
+  }
+}

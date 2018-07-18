@@ -1,0 +1,18 @@
+{
+  "category01": {
+    "categoryName":"Landscapes",
+    "imgUrl":"image here"
+  },
+  "category02": {
+    "categoryName":"Regions",
+    "imgUrl":"image here"
+  },
+  "category03": {
+    "categoryName":"Time of Day",
+    "imgUrl":"image here"
+  },
+  "category04": {
+    "categoryName":"Seasons",
+    "imgUrl":"image here"
+  }
+}

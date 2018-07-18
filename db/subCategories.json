@@ -1,0 +1,141 @@
+{
+  "subCategory01": {
+    "subCategoryName":"Rivers",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory02": {
+    "subCategoryName":"Oceans",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory03": {
+    "subCategoryName":"Waterfalls",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory04": {
+    "subCategoryName":"Canyons",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory05": {
+    "subCategoryName":"Forests",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory06": {
+    "subCategoryName":"Lakes",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory07": {
+    "subCategoryName":"Mountains",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory08": {
+    "subCategoryName":"Rock Formations",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory09": {
+    "subCategoryName":"Dunes/Beaches",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory10": {
+    "subCategoryName":"Non-Nature",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory11": {
+    "subCategoryName":"Pools/Springs",
+    "categoryId":"category01",
+    "imgUrl":"image here"},
+  "subCategory12": {
+    "subCategoryName":"Scenic Byways",
+    "categoryId":"category01",
+    "imgUrl":"image here"
+  },
+  "subCategory13": {
+    "subCategoryName":"West",
+    "categoryId":"category02",
+    "imgUrl":"image here"
+  },
+  "subCategory14": {
+    "subCategoryName":"Midwest",
+    "categoryId":"category02",
+    "imgUrl":"image here"
+  },
+  "subCategory15": {
+    "subCategoryName":"Northeast",
+    "categoryId":"category02",
+    "imgUrl":"image here"
+  },
+  "subCategory16": {
+    "subCategoryName":"Southeast",
+    "categoryId":"category02",
+    "imgUrl":"image here"
+  },
+  "subCategory17": {
+    "subCategoryName":"Southwest",
+    "categoryId":"category02",
+    "imgUrl":"image here"
+  },
+  "subCategory18": {
+    "subCategoryName":"Sunrise",
+    "categoryId":"category03",
+    "imgUrl":"image here"
+  },
+  "subCategory19": {
+    "subCategoryName":"Morning",
+    "categoryId":"category03",
+    "imgUrl":"image here"
+  },
+  "subCategory20": {
+    "subCategoryName":"Afternoon",
+    "categoryId":"category03",
+    "imgUrl":"image here"
+  },
+  "subCategory21": {
+    "subCategoryName":"Sunset",
+    "categoryId":"category03",
+    "imgUrl":"image here"
+  },
+  "subCategory22": {
+    "subCategoryName":"Night",
+    "categoryId":"category03",
+    "imgUrl":"image here"
+  },
+  "subCategory23": {
+    "subCategoryName":"All Day",
+    "categoryId":"category03",
+    "imgUrl":"image here"
+  },
+  "subCategory24": {
+    "subCategoryName":"Spring",
+    "categoryId":"category04",
+    "imgUrl":"image here"
+  },
+  "subCategory25": {
+    "subCategoryName":"Summer",
+    "categoryId":"category04",
+    "imgUrl":"image here"
+  },
+  "subCategory26": {
+    "subCategoryName":"Fall",
+    "categoryId":"category04",
+    "imgUrl":"image here"
+  },
+  "subCategory27": {
+    "subCategoryName":"Winter",
+    "categoryId":"category04",
+    "imgUrl":"image here"
+  },
+  "subCategory28": {
+    "subCategoryName":"All Seasons",
+    "categoryId":"category04",
+    "imgUrl":"image here"
+  }
+}
