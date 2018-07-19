@@ -1,0 +1,38 @@
+{
+	"spot01": {
+    "name": "Vernal Falls",
+		"city": "Yosemite Village",
+		"state": "California",
+		"stateAbbr": "CA",
+		"regionId": "subcategory03",
+		"landscapeId": "subCategory13",
+		"timeId": "subCategory19",
+		"seasonId": "subCategory25",
+		"seasonDescrip": "Summer",
+		"description": "Vernal Fall is a 317-foot (96.6 m) waterfall on the Merced River just downstream of Nevada Fall in Yosemite National Park, California.[1][2] Like its upstream neighbor, Vernal Fall is clearly visible at a distance, from Glacier Point, as well as close up, along the Mist Trail. The waterfall flows all year long, although by the end of summer it is substantially reduced in volume and can split into multiple strands, rather than a single curtain of water.",
+		"imageUrl": "./src/images/spot01.jpg",
+		"permit": false,
+		"longitude": "-119.543772",
+		"latitude": "37.727426",
+		"parkStatus": true,
+		"parkName": "Yosemite National Park"
+  },
+	  "spot02": {
+    "name": "Grand Prismatic Spring",
+		"city": "West Thumb",
+		"state": "Wyoming",
+		"stateAbbr": "WY",
+		"regionId": "subCategory13",
+		"landscapeId": "subCategory11",
+		"timeId": "subCategory23",
+		"seasonId": "subCategory25",
+		"seasonDescrip": "All Year Round",
+		"description": "The Grand Prismatic Spring in Yellowstone National Park is the largest hot spring in the United States, and the third largest in the world.  It was named for its striking coloration. Its colors match the rainbow dispersion of white light by an optical prism: red, orange, yellow, green, and blue.  There is a boardwalk around the spring, but the best viewpoint is from the trail up the ridge located southwest of the spring in the late afternoon.",
+		"imageUrl": "./src/images/",
+		"permit": false,
+		"longitude": "44.525114",
+		"latitude": "-110.838244",
+		"parkStatus": "true",
+		"parkName": "Yellowstone National Park"
+	}
+}

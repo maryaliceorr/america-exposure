@@ -1,0 +1,15 @@
+
+{
+  "bucketList01": {
+    "uid": "blahblah",
+    "spotId": "spot01"
+  },
+  "bucketList02": {
+    "uid": "blahblah",
+    "spotId": "spot03"
+  },
+  "bucketList03": {
+    "uid": "hiya",
+    "spotId": "spot10"
+  }
+}
