@@ -7,7 +7,7 @@ import './Login.css';
 
 class Login extends React.Component {
   state = {
-    user: {
+    visitor: {
       email: 'm.a.orr17@gmail.com',
       password: 'Password123',
     },
@@ -17,7 +17,7 @@ class Login extends React.Component {
     const {visitor} = this.state;
     e.preventDefault();
     fbAuthRequests
-      .loginUser(visitor)
+      .loginVisitor(visitor)
       .then(() => {
         this.props.history.push('/');
       })
@@ -44,10 +44,10 @@ passwordChanged = e => {
       <div className="Login">
         <form>
           <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label htmlFor="exampleInputEmail1">Email address</label>
             <input
             type="email"
-            class="form-control"
+            className="form-control"
             id="inputEmail"
             placeholder="Email"
             value={visitor.email}
@@ -55,7 +55,7 @@ passwordChanged = e => {
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label htmlFor="exampleInputPassword1">Password</label>
             <input
             type="password"
             className="form-control"
