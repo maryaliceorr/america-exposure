@@ -8,7 +8,7 @@ import './Register.css';
 class Register extends React.Component {
 
   state = {
-    user: {
+    visitor: {
       email:'',
       password: '',
     },
@@ -45,10 +45,10 @@ passwordChanged = e => {
       <div className="Register">
       <form>
         <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label htmlFor="exampleInputEmail1">Email address</label>
           <input
           type="email"
-          class="form-control"
+          className="form-control"
           id="inputEmail"
           placeholder="Email"
           value={visitor.email}
@@ -56,7 +56,7 @@ passwordChanged = e => {
           />
         </div>
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label htmlFor="exampleInputPassword1">Password</label>
           <input
           type="password"
           className="form-control"

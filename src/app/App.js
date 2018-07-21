@@ -25,7 +25,7 @@ import SplashPage from '../components/SplashPage/SplashPage';
 import fbConnection from '../firebaseCalls/connection';
 fbConnection();
 
-const PrivateRoute = ({component: Compontent, authed, ...rest}) => {
+const PrivateRoute = ({component: Component, authed, ...rest}) => {
   return (
     <Route
       {...rest}
@@ -64,16 +64,14 @@ class App extends React.Component {
     authed: false,
   }
 
-  removeListener = firebase.auth().onAuthStateChanged((visitor) => {
-    if (visitor) {
-      this.setState({authed: true});
-    } else {
-      this.setState({authed: false});
-    }
-  });
-
   componentDidMount () {
-    this.removeListener();
+    this.removeListener = firebase.auth().onAuthStateChanged((visitor) => {
+      if (visitor) {
+        this.setState({authed: true});
+      } else {
+        this.setState({authed: false});
+      }
+    });
   }
 
   componentWillUnmount () {
