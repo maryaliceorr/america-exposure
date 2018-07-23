@@ -19,7 +19,7 @@ class LoginForm extends React.Component {
     fbAuthRequests
       .loginVisitor(visitor)
       .then(() => {
-        this.props.history.push('/');
+        this.props.history.push('/home');
       })
       .catch((error) => {
         console.error('error with loginToAppEvent', error);

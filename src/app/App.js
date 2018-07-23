@@ -124,7 +124,7 @@ class App extends React.Component {
                 <PrivateRoute
                   path="/spot/:id"
                   authed={this.state.authed}
-                  component={SpotPage}
+                  component={SpotsPage}
                 />
                 <PrivateRoute
                   path="/make-a-trip"

@@ -20,7 +20,7 @@ class RegisterForm extends React.Component {
     fbAuthRequests
       .registerVisitor(visitor)
       .then(() => {
-        this.props.history.push('/');
+        this.props.history.push('/home');
       })
       .catch((error) => {
         console.error('error with registerForAppEvent', error);
@@ -67,12 +67,12 @@ passwordChanged = e => {
           />
         </div>
         <div>
-          <Link to="/login">Already RegisterFormed? Login Here.</Link>
+          <Link to="/login">Already Registered? Login Here.</Link>
         </div>
         <button
         type="submit"
         className="btn btn-default"
-        onClick={this.RegisterFormForAppEvent}
+        onClick={this.registerForAppEvent}
         >
         Submit
         </button>
