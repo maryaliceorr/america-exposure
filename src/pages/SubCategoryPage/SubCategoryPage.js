@@ -8,7 +8,7 @@ class SubCategoryPage extends React.Component {
     return (
       <div className="SubCategoryPage">
         <h2>SubCategoryPage</h2>
-        <Link to="/spots/spotid">
+        <Link to="/spot/:id">
           <button
           type="button"
           className="btn btn-default"
