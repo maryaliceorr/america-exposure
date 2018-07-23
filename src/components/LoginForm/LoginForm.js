@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import fbAuthRequests from '../../firebaseCalls/auth';
 
-import './Login.css';
+import './LoginForm.css';
 
-class Login extends React.Component {
+class LoginForm extends React.Component {
   state = {
     visitor: {
       email: 'm.a.orr17@gmail.com',
@@ -81,4 +81,4 @@ passwordChanged = e => {
   }
 }
 
-export default Login;
+export default LoginForm;

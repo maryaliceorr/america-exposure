@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './SubCategoryPage.css';
 
@@ -7,6 +8,14 @@ class SubCategoryPage extends React.Component {
     return (
       <div className="SubCategoryPage">
         <h2>SubCategoryPage</h2>
+        <Link to="/spots/spotid">
+          <button
+          type="button"
+          className="btn btn-default"
+          >
+            To Spots
+          </button>
+        </Link>
       </div>
     );
   }

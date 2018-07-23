@@ -23,14 +23,14 @@ class NavBar extends React.Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <Link to="/" className="navbar-brand">American Exposure</Link>
+              <Link to="/home" className="navbar-brand">American Exposure</Link>
             </div>
             <div className="collapse navbar-collapse">
               {
                 authed ? (
                   <ul className="nav navbar-nav navbar-right">
                     <li>
-                      <Link to="/" className="navbar-brand">Home</Link>
+                      <Link to="/home" className="navbar-brand">Home</Link>
                     </li>
                     <li>
                       <Link to="/make-a-trip" className="navbar-brand">Make a Trip</Link>
@@ -39,7 +39,7 @@ class NavBar extends React.Component {
                       <Link to="/upcoming-trips" className="navbar-brand">Upcoming Trips</Link>
                     </li>
                     <li>
-                      <Link to="/upcoming-trips" className="navbar-brand">Bucket List</Link>
+                      <Link to="/bucket-list" className="navbar-brand">Bucket List</Link>
                     </li>
                     <li className="navbar-form">
                       <button

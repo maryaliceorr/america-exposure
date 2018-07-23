@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './SpotPage.css';
 
 class SpotPage extends React.Component {
