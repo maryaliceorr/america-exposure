@@ -4,24 +4,21 @@ import firebase from 'firebase';
 
 import './App.css';
 
-import BucketList from '../components/BucketList/BucketList';
-// import CameraNav from '../components/CameraNav/CameraNav';
-import Homepage from '../components/Homepage/Homepage';
-// import Landscapes from '../components/Landscapes/Landscapes';
-import Login from '../components/Login/LoginForm';
-// import MakeATrip from '../components/MakeATrip/MakeATrip';
+import BucketListPage from '../pages/BucketListPage/BucketListPage';
+import CategoryPage from '../pages/CategoryPage/CategoryPage';
+import Homepage from '../pages/Homepage/Homepage';
+import LoginPage from '../pages/LoginPage/LoginPage';
+import MakeATripPage from '../pages/MakeATripPage/MakeATripPage';
 import NavBar from '../components/NavBar/NavBar';
-// import Regions from '../components/Regions/Regions';
-import Register from '../components/Register/RegisterForm';
-// import Seasons from '../components/Seasons/Seasons';
-import SplashPage from '../components/SplashPage/SplashPage';
-// import Spot from '../components/Spot/Spot';
-import Spots from '../components/Spots/SpotsCards';
-// import SpotsCard from '../components/SpotsCard/SpotsCard';
-// import TimeOfDay from '../components/TimeOfDay/TimeOfDay';
-// import TripCard from '../components/TripCard/TripCard';
-// import TripForm from '../components/TripForm/TripForm';
-import UpcomingTrips from '../components/UpcomingTrips/UpcomingTrips';
+import RegisterPage from '../pages/RegisterPage/RegisterPage';
+import SplashPage from '../pages/SplashPage/SplashPage';
+import SpotPage from '../pages/SpotPage/SpotPage';
+import SpotsPage from '../pages/SpotsPage/SpotsPage';
+import SubCategoryPage from '../pages/SubCategoryPage/SubCategoryPage';
+import UpcomingTripsPage from '../pages/UpcomingTripsPage/UpcomingTripsPage';
+import TripCard from '../components/TripCard/TripCard';
+import NewTrip from '../components/NewTrip/NewTrip';
+import EditTrip from '../components/EditTrip/EditTrip';
 import fbConnection from '../firebaseCalls/connection';
 fbConnection();
 
@@ -120,7 +117,7 @@ class App extends React.Component {
                   component={SubCategoryPage}
                 />
                 <PrivateRoute
-                  path="/trip/:tripId"
+                  path="/upcoming-trips"
                   authed={this.state.authed}
                   component={UpcomingTripsPage}
                 />
@@ -138,11 +135,6 @@ class App extends React.Component {
                   path="/spots/:filterType"
                   authed={this.state.authed}
                   component={CategoryPage}
-                />
-                <PrivateRoute
-                  path="/spots/:filterType/:id"
-                  authed={this.state.authed}
-                  component={SubCategoryPage}
                 />
                 <PrivateRoute
                   path="/trip/:tripId"

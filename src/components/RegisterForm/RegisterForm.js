@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import fbAuthRequests from '../../firebaseCalls/auth';
 
-import './Register.css';
+import './RegisterForm.css';
 
-class Register extends React.Component {
+class RegisterForm extends React.Component {
 
   state = {
     visitor: {
@@ -67,12 +67,12 @@ passwordChanged = e => {
           />
         </div>
         <div>
-          <Link to="/login">Already registered? Login Here.</Link>
+          <Link to="/login">Already RegisterFormed? Login Here.</Link>
         </div>
         <button
         type="submit"
         className="btn btn-default"
-        onClick={this.registerForAppEvent}
+        onClick={this.RegisterFormForAppEvent}
         >
         Submit
         </button>
@@ -83,4 +83,4 @@ passwordChanged = e => {
 }
 
 
-export default Register;
+export default RegisterForm;

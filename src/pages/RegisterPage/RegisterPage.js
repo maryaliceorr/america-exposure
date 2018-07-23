@@ -1,5 +1,5 @@
 import React from 'react';
-
+import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import './RegisterPage.css';
 
 class RegisterPage extends React.Component {
@@ -7,6 +7,7 @@ class RegisterPage extends React.Component {
     return (
       <div className="RegisterPage">
         <h2>RegisterPage</h2>
+        <RegisterForm />
       </div>
     );
   }
