@@ -151,7 +151,6 @@ class App extends React.Component {
                   authed={this.state.authed}
                   component={EditTrip}
                 />
-
               </Switch>
             </div>
           </div>
