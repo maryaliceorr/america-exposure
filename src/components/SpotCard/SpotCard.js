@@ -24,7 +24,7 @@ class SpotCard extends React.Component {
   render () {
     const spotsComponents = this.state.spots.map((spots) => {
       return(
-        <Spots
+        <AllSpotsInfo
           key={spots.id}
           spotsInfo={spots}
         />

@@ -132,7 +132,7 @@ class App extends React.Component {
                   component={MakeATripPage}
                 />
                 <PrivateRoute
-                  path="/spots/:filterType"
+                  path="/spots/:categoryId"
                   authed={this.state.authed}
                   component={CategoryPage}
                 />
