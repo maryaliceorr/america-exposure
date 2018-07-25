@@ -24,7 +24,7 @@ state = {
   render () {
     const categoryComponents = this.state.categories.map((category) => {
       return (
-        <Link to={`/spots/${category.id}`}>
+        <Link to={`/categories/${category.id}`}>
           <button
           type="button"
           className="btn btn-default"

@@ -28,7 +28,7 @@
 		"seasonId": "subCategory25",
 		"seasonDescrip": "All Year Round",
 		"description": "The Grand Prismatic Spring in Yellowstone National Park is the largest hot spring in the United States, and the third largest in the world.  It was named for its striking coloration. Its colors match the rainbow dispersion of white light by an optical prism: red, orange, yellow, green, and blue.  There is a boardwalk around the spring, but the best viewpoint is from the trail up the ridge located southwest of the spring in the late afternoon.",
-		"imageUrl": "./src/images/",
+		"imageUrl": "./src/images/spot02.jpg",
 		"permit": false,
 		"longitude": "44.525114",
 		"latitude": "-110.838244",
