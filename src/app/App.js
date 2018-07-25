@@ -5,7 +5,6 @@ import firebase from 'firebase';
 import './App.css';
 
 import BucketListPage from '../pages/BucketListPage/BucketListPage';
-import CategoryPage from '../pages/CategoryPage/CategoryPage';
 import Homepage from '../pages/Homepage/Homepage';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import MakeATripPage from '../pages/MakeATripPage/MakeATripPage';
@@ -112,9 +111,14 @@ class App extends React.Component {
                   component={BucketListPage}
                 />
                 <PrivateRoute
-                  path="/spots/:categoryId/:subCategoryId"
+                  path="/categories/:categoryId"
                   authed={this.state.authed}
                   component={SubCategoryPage}
+                />
+                <PrivateRoute
+                  path="/subcategories/:subCategoryId"
+                  authed={this.state.authed}
+                  component={SpotsPage}
                 />
                 <PrivateRoute
                   path="/upcoming-trips"
@@ -124,17 +128,12 @@ class App extends React.Component {
                 <PrivateRoute
                   path="/spot/:id"
                   authed={this.state.authed}
-                  component={SpotsPage}
+                  component={SpotPage}
                 />
                 <PrivateRoute
                   path="/make-a-trip"
                   authed={this.state.authed}
                   component={MakeATripPage}
-                />
-                <PrivateRoute
-                  path="/spots/:categoryId"
-                  authed={this.state.authed}
-                  component={CategoryPage}
                 />
                 <PrivateRoute
                   path="/trip/:tripId"
