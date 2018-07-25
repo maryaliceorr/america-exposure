@@ -23,7 +23,6 @@ class subCategoryPage extends React.Component {
     };
   render () {
     const subCategoryCards = this.state.subCategories.map((subCategory) => {
-      const categoryId = this.props.match.params.categoryId;
       return (
         <div key={subCategory.id}>
           <Link to={`/subcategories/${subCategory.id}`}>
@@ -37,9 +36,29 @@ class subCategoryPage extends React.Component {
           </div>
       );
     });
+
+    if (this.props.subCategories.subcategoryId = subcategory01) {
+      categoryName = (
+        <h1>Landscapes</h1>
+      )
+    } if (this.props.subCategories.subcategoryId = subcategory01) {
+      categoryName = (
+        <h1>Regions</h1>
+      )
+    }  if (this.props.subCategories.subcategoryId = subcategory01) {
+      categoryName = (
+        <h1>Time of Day</h1>
+      )
+    } if (this.props.subCategories.subcategoryId = subcategory01) {
+      categoryName = (
+        <h1>Seasons</h1>
+      )
+    }
+
     return (
-      <div className="CategoryPage">
-        <h2>SubCategoryPage</h2>
+      <div className="SubCategoryPage">
+
+        {categoryName}
         {subCategoryCards}
       </div>
     );

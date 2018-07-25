@@ -23,17 +23,24 @@ state = {
   };
 
   render () {
+    const spotsCards = this.state.spots.map((spot) => {
+      return (
+        <div key={spot.id}>
+          <Link to={`/spot/${spot.id}`}>
+            <button
+            type="button"
+            className="btn btn-default"
+            >
+              {spot.name}
+            </button>
+          </Link>
+          </div>
+      );
+    });
     return (
-      <div className="SubCategoryPage">
-        <h2>SpotsPage</h2>
-        <Link to="/spots/:id">
-          <button
-          type="button"
-          className="btn btn-default"
-          >
-            To Individual Spot
-          </button>
-        </Link>
+      <div className="SpotsPage">
+        <h2>Spots Cards</h2>
+        {spotsCards}
       </div>
     );
   }
