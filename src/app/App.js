@@ -112,7 +112,7 @@ class App extends React.Component {
                   component={BucketListPage}
                 />
                 <PrivateRoute
-                  path="/spots/:filterType/:id"
+                  path="/spots/:categoryId/:subCategoryId"
                   authed={this.state.authed}
                   component={SubCategoryPage}
                 />
