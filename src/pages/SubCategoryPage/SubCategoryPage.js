@@ -27,7 +27,7 @@ class SubCategoryPage extends React.Component {
       return (
         <div key={subCategory.id}>
           <Link to={`/subcategories/${subCategory.id}`}>
-            <img src={imageUrl} alt="subCategory.subCategoryName"/>
+            <img src={imageUrl} alt={subCategory.subCategoryName}/>
             <button
             type="button"
             className="btn btn-default"

@@ -4,7 +4,7 @@ import constants from '../constants';
 const getSpots = (subCategoryId) => {
   return new Promise((resolve, reject) => {
     axios
-      .get(`${constants.firebaseConfig.databaseURL}/subCategories.json?orderBy="subCategoryId"&equalTo="${subCategoryId}"`)
+      .get(`${constants.firebaseConfig.databaseURL}/spots.json?orderBy="landscapeId"&equalTo="${subCategoryId}"`)
       .then(res => {
         const spots = [];
         if (res.data !== null) {
