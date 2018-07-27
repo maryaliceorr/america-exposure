@@ -11,9 +11,9 @@ state = {
 }
 
   componentDidMount () {
-    const subCategoryId = this.props.match.params.subCategoryId;
+    const locationId = this.props.match.params.subCategoryId;
     spotsRequests
-    .getSpots(subCategoryId)
+    .getSpots(locationId)
     .then((spots) => {
       this.setState({spots})
     })
@@ -24,14 +24,16 @@ state = {
 
   render () {
     const spotsCards = this.state.spots.map((spot) => {
+      const imageUrl = require(`${spot.image}`);
       return (
         <div key={spot.id}>
           <Link to={`/spot/${spot.id}`}>
+          <img src={imageUrl} alt={spot.locationName} />
             <button
             type="button"
             className="btn btn-default"
             >
-              {spot.name}
+              {spot.locationName}
             </button>
           </Link>
           </div>
@@ -157,7 +159,7 @@ state = {
     return (
       <div className="SpotsPage">
         {subCategoryName}
-        {/* {spotsCards} */}
+        {spotsCards}
       </div>
     );
   }
