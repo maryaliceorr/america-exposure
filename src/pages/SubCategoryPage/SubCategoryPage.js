@@ -4,7 +4,7 @@ import subCategoriesRequests from "../../firebaseCalls/subCategories";
 
 import './SubCategoryPage.css';
 
-class subCategoryPage extends React.Component {
+class SubCategoryPage extends React.Component {
 
   state = {
     subCategories: [],
@@ -23,9 +23,11 @@ class subCategoryPage extends React.Component {
     };
   render () {
     const subCategoryCards = this.state.subCategories.map((subCategory) => {
+      const imageUrl = require(`${subCategory.imgUrl}`);
       return (
         <div key={subCategory.id}>
           <Link to={`/subcategories/${subCategory.id}`}>
+            <img src={imageUrl} alt="subCategory.subCategoryName"/>
             <button
             type="button"
             className="btn btn-default"
@@ -37,19 +39,22 @@ class subCategoryPage extends React.Component {
       );
     });
 
-    if (this.props.subCategories.subcategoryId = subcategory01) {
+    const actualCategoryName = (this.props.match.params.categoryId);
+
+    let categoryName = "";
+    if (actualCategoryName === "category01") {
       categoryName = (
         <h1>Landscapes</h1>
       )
-    } if (this.props.subCategories.subcategoryId = subcategory01) {
+    } if (actualCategoryName === "category02") {
       categoryName = (
         <h1>Regions</h1>
       )
-    }  if (this.props.subCategories.subcategoryId = subcategory01) {
+    }  if (actualCategoryName === "category03") {
       categoryName = (
         <h1>Time of Day</h1>
       )
-    } if (this.props.subCategories.subcategoryId = subcategory01) {
+    } if (actualCategoryName === "category04") {
       categoryName = (
         <h1>Seasons</h1>
       )
@@ -57,7 +62,6 @@ class subCategoryPage extends React.Component {
 
     return (
       <div className="SubCategoryPage">
-
         {categoryName}
         {subCategoryCards}
       </div>
@@ -65,4 +69,4 @@ class subCategoryPage extends React.Component {
   }
 }
 
-export default subCategoryPage;
+export default SubCategoryPage;

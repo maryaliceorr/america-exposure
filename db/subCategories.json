@@ -2,140 +2,141 @@
   "subCategory01": {
     "subCategoryName":"Rivers",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat01.jpg"
   },
   "subCategory02": {
     "subCategoryName":"Oceans",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat02.jpg"
   },
   "subCategory03": {
     "subCategoryName":"Waterfalls",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat03.jpg"
   },
   "subCategory04": {
     "subCategoryName":"Canyons",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat04.jpg"
   },
   "subCategory05": {
     "subCategoryName":"Forests",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat05.jpg"
   },
   "subCategory06": {
     "subCategoryName":"Lakes",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat06.jpg"
   },
   "subCategory07": {
     "subCategoryName":"Mountains",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat07.jpg"
   },
   "subCategory08": {
     "subCategoryName":"Rock Formations",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat08.jpg"
   },
   "subCategory09": {
     "subCategoryName":"Dunes/Beaches",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat09.jpg"
   },
   "subCategory10": {
     "subCategoryName":"Non-Nature",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat10.jpg"
   },
   "subCategory11": {
     "subCategoryName":"Pools/Springs",
     "categoryId":"category01",
-    "imgUrl":"image here"},
+    "imgUrl":"./subCat/subCat11.jpg"
+  },
   "subCategory12": {
     "subCategoryName":"Scenic Byways",
     "categoryId":"category01",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat12.jpg"
   },
   "subCategory13": {
     "subCategoryName":"West",
     "categoryId":"category02",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat13.jpg"
   },
   "subCategory14": {
     "subCategoryName":"Midwest",
     "categoryId":"category02",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat14.jpg"
   },
   "subCategory15": {
     "subCategoryName":"Northeast",
     "categoryId":"category02",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat15.jpg"
   },
   "subCategory16": {
     "subCategoryName":"Southeast",
     "categoryId":"category02",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat16.jpg"
   },
   "subCategory17": {
     "subCategoryName":"Southwest",
     "categoryId":"category02",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat17.jpg"
   },
   "subCategory18": {
     "subCategoryName":"Sunrise",
     "categoryId":"category03",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat18.jpg"
   },
   "subCategory19": {
     "subCategoryName":"Morning",
     "categoryId":"category03",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat19.jpg"
   },
   "subCategory20": {
     "subCategoryName":"Afternoon",
     "categoryId":"category03",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat20.jpg"
   },
   "subCategory21": {
     "subCategoryName":"Sunset",
     "categoryId":"category03",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat21.jpg"
   },
   "subCategory22": {
     "subCategoryName":"Night",
     "categoryId":"category03",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat22.jpg"
   },
   "subCategory23": {
     "subCategoryName":"All Day",
     "categoryId":"category03",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat23.jpg"
   },
   "subCategory24": {
     "subCategoryName":"Spring",
     "categoryId":"category04",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat24.jpg"
   },
   "subCategory25": {
     "subCategoryName":"Summer",
     "categoryId":"category04",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat25.jpg"
   },
   "subCategory26": {
     "subCategoryName":"Fall",
     "categoryId":"category04",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat26.jpg"
   },
   "subCategory27": {
     "subCategoryName":"Winter",
     "categoryId":"category04",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat27.jpg"
   },
   "subCategory28": {
     "subCategoryName":"All Seasons",
     "categoryId":"category04",
-    "imgUrl":"image here"
+    "imgUrl":"./subCat/subCat28.jpg"
   }
 }
