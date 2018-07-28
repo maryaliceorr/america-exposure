@@ -23,12 +23,17 @@ componentDidMount () {
 };
 
   render () {
-    // const tripCards = this.state.trips.map((trips) => {
-
-    // })
+    const tripCards = this.state.trips.map((trip) => {
+      <div>
+        <h4>trip.tripName</h4>
+        <h4>trip.date</h4>
+        <p>trip.notes</p>
+      </div>
+    });
     return (
       <div className="TripCard">
         <h2>TripCard</h2>
+        {tripCards}
 
         <Link to="/edit/trip/:tripId">
           <button
