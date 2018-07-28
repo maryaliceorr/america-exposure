@@ -23,10 +23,11 @@ state = {
 
   render () {
 
+
     const categoryComponents = this.state.categories.map((category) => {
       const imageUrl = require(`${category.imgUrl}`);
       return (
-        <div>
+        <div key={category.id}>
         <img src={imageUrl} alt={category.name}/>
         <Link to={`/categories/${category.id}`}>
           <button
