@@ -9,8 +9,8 @@ class AllSpotsInfo extends React.Component {
       <div>
         <h2>AllSpotsInfo</h2>
         <div className="AllSpotsInfo">
-          <img src={AllSpotsInfo.imageUrl} alt={AllSpotsInfo.name} />
-          <h2>{AllSpotsInfo.name}</h2>
+          <img src={AllSpotsInfo.image} alt={AllSpotsInfo.locationName} />
+          <h2>{AllSpotsInfo.locationName}</h2>
           <h4>{AllSpotsInfo.parkName}</h4>
           <h5>Location: {AllSpotsInfo.city}, {AllSpotsInfo.stateAbbr}</h5>
           <h5>Region: {AllSpotsInfo.regionId}</h5>
