@@ -26,8 +26,9 @@ state = {
   };
 
   render () {
+
     const spotsCards = this.state.spots.map((spot) => {
-      const imageUrl = require(`${spot.image}`);
+      const imageUrl = require(`../../images/spots/${spot.image}`);
       return (
         <div key={spot.id}>
           <Link to={`/spot/${spot.id}`}>
