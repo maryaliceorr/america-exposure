@@ -21,4 +21,30 @@ const getTrips = () => {
   });
 };
 
-export default {getTrips};
+const postTrips = (trip) => {
+  return new Promise((resolve, reject) => {
+    axios
+    .post(`${constants.firebaseConfig.databaseURL}/trips.json`, trip)
+    .then((res) => {
+      resolve(res.data);
+    })
+    .catch((err) => {
+      reject(err);
+    })
+  })
+};
+
+const deleteTrip = (tripId) => {
+  return new Promise((resolve, reject) => {
+    axios
+    .delete(`${constants.firebaseConfig.databaseURL}/trips/${tripId}.json`)
+    .then((res) => {
+      resolve(res.data);
+    })
+    .catch((err) => {
+      reject(err);
+    })
+  })
+};
+
+export default {getTrips, postTrips, deleteTrip};

@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import tripRequests from '../../firebaseCalls/trip';
+import authRequests from '../../firebaseCalls/auth';
 
 import './MakeATripForm.css';
 
@@ -12,8 +15,9 @@ const blankTrip = {
 class MakeATripForm extends React.Component {
 
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func,
   }
+
   state = {
     newTrip: blankTrip,
   }
@@ -36,8 +40,22 @@ notesChanged = (e) => {
   this.formFieldStringState('notes', e);
 }
 
+postTrip = () => {
+  const newTrip = {...this.state.newTrip};
+  newTrip.uid = authRequests.getUID();
+  newTrip.dateTime = Date.now();
+  tripRequests
+    .postTrips(newTrip)
+    .then(() => {
+      // this.setState({trips})
+    })
+    .catch((error) => {
+      console.error('error with postTrips request', error);
+    });
+}
+
 formSubmission = (e) => {
-  const {onSubmission} = this.props;
+  debugger
   const {newTrip} = this.state;
   e.preventDefault();
   if (
@@ -45,8 +63,8 @@ formSubmission = (e) => {
     newTrip.date &&
     newTrip.notes
   ) {
-    onSubmission(this.state.newTrip);
-    this.setState({newState: blankTrip});
+    this.postTrip(this.state.newTrip);
+    // this.setState({newState: blankTrip});
   } else {
     alert('form submission is all wrong');
   }
@@ -63,9 +81,10 @@ formSubmission = (e) => {
             type="input"
             className="form-control"
             id="tripName"
-            placeholder="Trip Name" />
+            placeholder="Trip Name"
             value={newTrip.tripName}
             onChange={this.tripNameChanged}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="InputDateOfTrip">Date of Your Trip</label>
@@ -89,14 +108,12 @@ formSubmission = (e) => {
             onChange={this.notesChanged}
             />
           </div>
-            <Link to="/new/trip">
             <button
-            type="button"
+            type="submit"
             className="btn btn-default"
             >
               Create Trip
             </button>
-          </Link>
         </form>
       </div>
     );
