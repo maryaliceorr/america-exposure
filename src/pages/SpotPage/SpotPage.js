@@ -1,20 +1,32 @@
 import React from 'react';
+import {DropdownButton, MenuItem } from 'react-bootstrap';
 import spotRequests from '../../firebaseCalls/spots';
+import tripRequests from '../../firebaseCalls/trip';
+import authRequests from '../../firebaseCalls/auth';
 
 import './SpotPage.css';
-
 
 class SpotPage extends React.Component {
   state = {
     spot: {},
+    trips: [],
   }
 
   componentDidMount () {
     const spotId = this.props.match.params.id;
+    const uid = authRequests.getUID();
     spotRequests
       .getSingleSpot(spotId)
       .then((spot) => {
         this.setState({spot});
+        tripRequests
+        .getTrips(uid)
+        .then((trips) => {
+        this.setState({trips})
+        })
+        .catch((error) => {
+          console.error('error with get Trips', error);
+        });
       })
       .catch((error) => {
         console.error('error with get request for Spots', error);
@@ -24,6 +36,10 @@ class SpotPage extends React.Component {
   render () {
     const {spot} = this.state;
     const imageUrl = spot.image ? require(`../../images/spots/${spot.image}`) : null;
+    const dropdownTrips = this.state.trips.map((trip) => {
+      return (<MenuItem eventKey={trip.tripId}>{trip.tripName}</MenuItem>)
+    })
+
     return (
       <div className="SpotsCard">
       <div>
@@ -41,23 +57,17 @@ class SpotPage extends React.Component {
           <h5>Latitude: {spot.latitude}</h5>
           <h5>Longitude: {spot.longitude}</h5>
           <p>{spot.description}</p>
-          <div clasNames="dropdown">
-            <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Choose a Trip
-              <span className="caret"></span>
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Trip1</a></li>
-              <li><a href="#">Trip2</a></li>
-              <li><a href="#">Trip3</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </div>
+              <DropdownButton
+                bsStyle={"default"}
+                title="Select A Trip"
+                id="dropdown1"
+              >
+                {dropdownTrips}
+              </DropdownButton>
           <button className="btn btn-info" type="submit">Add to Trip</button>
       </div>
     </div>
-      </div>
+  </div>
     );
   }
 }
