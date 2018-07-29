@@ -41,12 +41,12 @@ class SpotPage extends React.Component {
           <h5>Latitude: {spot.latitude}</h5>
           <h5>Longitude: {spot.longitude}</h5>
           <p>{spot.description}</p>
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <div clasNames="dropdown">
+            <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Choose a Trip
-              <span class="caret"></span>
+              <span className="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
               <li><a href="#">Trip1</a></li>
               <li><a href="#">Trip2</a></li>
               <li><a href="#">Trip3</a></li>
@@ -54,7 +54,7 @@ class SpotPage extends React.Component {
               <li><a href="#">Separated link</a></li>
             </ul>
           </div>
-          <button class="btn btn-info" type="submit">Add to Trip</button>
+          <button className="btn btn-info" type="submit">Add to Trip</button>
       </div>
     </div>
       </div>
