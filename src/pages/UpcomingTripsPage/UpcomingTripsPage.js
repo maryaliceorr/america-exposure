@@ -27,6 +27,7 @@ class UpcomingTripsPage extends React.Component {
     const tripCards = this.state.trips.map((trip) => {
       return (
         <TripCard
+          key = {trip.id}
           trip = {trip}
         />
       );
