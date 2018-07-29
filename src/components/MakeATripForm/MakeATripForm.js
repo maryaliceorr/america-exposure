@@ -47,7 +47,7 @@ postTrip = () => {
   tripRequests
     .postTrips(newTrip)
     .then(() => {
-      // this.setState({trips})
+      this.props.successfulFormPost();
     })
     .catch((error) => {
       console.error('error with postTrips request', error);
@@ -64,7 +64,7 @@ formSubmission = (e) => {
     newTrip.notes
   ) {
     this.postTrip(this.state.newTrip);
-    // this.setState({newState: blankTrip});
+      this.setState({newState: blankTrip});
   } else {
     alert('form submission is all wrong');
   }

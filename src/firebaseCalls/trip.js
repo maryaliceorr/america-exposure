@@ -1,10 +1,10 @@
 import axios from 'axios';
 import constants from '../constants';
 
-const getTrips = () => {
+const getTrips = (uid) => {
   return new Promise((resolve, reject) => {
     axios
-      .get(`${constants.firebaseConfig.databaseURL}/trips.json`)
+      .get(`${constants.firebaseConfig.databaseURL}/trips.json?orderBy="uid"&equalTo="${uid}"`)
       .then(res => {
         const trips = [];
         if (res.data !== null) {

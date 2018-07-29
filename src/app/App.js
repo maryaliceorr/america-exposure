@@ -15,8 +15,7 @@ import SpotPage from '../pages/SpotPage/SpotPage';
 import SpotsPage from '../pages/SpotsPage/SpotsPage';
 import SubCategoryPage from '../pages/SubCategoryPage/SubCategoryPage';
 import UpcomingTripsPage from '../pages/UpcomingTripsPage/UpcomingTripsPage';
-import TripCard from '../components/TripCard/TripCard';
-import NewTrip from '../components/NewTrip/NewTrip';
+import TripPage from '../pages/TripPage/TripPage';
 import EditTrip from '../components/EditTrip/EditTrip';
 import fbConnection from '../firebaseCalls/connection';
 fbConnection();
@@ -138,12 +137,7 @@ class App extends React.Component {
                 <PrivateRoute
                   path="/trip/:tripId"
                   authed={this.state.authed}
-                  component={TripCard}
-                />
-                <PrivateRoute
-                  path="/new/trip"
-                  authed={this.state.authed}
-                  component={NewTrip}
+                  component={TripPage}
                 />
                 <PrivateRoute
                   path="/edit/trip/:tripId"
