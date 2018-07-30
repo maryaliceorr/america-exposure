@@ -3,8 +3,10 @@ import {DropdownButton, MenuItem } from 'react-bootstrap';
 import spotRequests from '../../firebaseCalls/spots';
 import tripRequests from '../../firebaseCalls/trip';
 import authRequests from '../../firebaseCalls/auth';
+import tripSpotRequests from '../../firebaseCalls/tripSpot';
 
 import './SpotPage.css';
+
 
 class SpotPage extends React.Component {
   state = {
@@ -33,11 +35,36 @@ class SpotPage extends React.Component {
       });
   }
 
+  postTripSpot = () => {
+    tripSpotRequests
+      .postTripSpot()
+      .then(() => {
+        this.props.successfulFormPost();
+      })
+      .catch((error) => {
+        console.error('error with postTrips request', error);
+      });
+  }
+
   render () {
     const {spot} = this.state;
     const imageUrl = spot.image ? require(`../../images/spots/${spot.image}`) : null;
     const dropdownTrips = this.state.trips.map((trip) => {
-      return (<MenuItem eventKey={trip.tripId}>{trip.tripName}</MenuItem>)
+      const onSelectEvent = (e) => {
+        const tripSpot = {
+          tripId: (e),
+          spotId: (this.props.match.params)
+        }
+      }
+      return (
+      <MenuItem
+        onSelect={(e) => {
+          {onSelectEvent}
+        }}
+        eventKey={trip.id}>
+        {trip.tripName}
+      </MenuItem>
+      )
     })
 
     return (
@@ -61,10 +88,13 @@ class SpotPage extends React.Component {
                 bsStyle={"default"}
                 title="Select A Trip"
                 id="dropdown1"
+                // onSelect={(e) => {
+                //   console.log(e);
+
               >
                 {dropdownTrips}
               </DropdownButton>
-          <button className="btn btn-info" type="submit">Add to Trip</button>
+          <button className="btn btn-info" type="submit">Go to Trips</button>
       </div>
     </div>
   </div>
