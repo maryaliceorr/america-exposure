@@ -35,14 +35,17 @@ class SpotPage extends React.Component {
       });
   }
 
-  postTripSpot = () => {
+  postTripSpot = (e) => {
+    const tripSpot = {
+      tripId: (e),
+      spotId: (this.props.match.params.id)
+    }
     tripSpotRequests
-      .postTripSpot()
+      .postTripSpots(tripSpot)
       .then(() => {
-        this.props.successfulFormPost();
       })
       .catch((error) => {
-        console.error('error with postTrips request', error);
+        console.error('error with postTripSpot request', error);
       });
   }
 
@@ -50,17 +53,11 @@ class SpotPage extends React.Component {
     const {spot} = this.state;
     const imageUrl = spot.image ? require(`../../images/spots/${spot.image}`) : null;
     const dropdownTrips = this.state.trips.map((trip) => {
-      const onSelectEvent = (e) => {
-        const tripSpot = {
-          tripId: (e),
-          spotId: (this.props.match.params)
-        }
-      }
       return (
       <MenuItem
-        onSelect={(e) => {
-          {onSelectEvent}
-        }}
+        onSelect = {this.postTripSpot}
+
+
         eventKey={trip.id}>
         {trip.tripName}
       </MenuItem>
@@ -88,10 +85,11 @@ class SpotPage extends React.Component {
                 bsStyle={"default"}
                 title="Select A Trip"
                 id="dropdown1"
-                // onSelect={(e) => {
-                //   console.log(e);
-
               >
+              {/* <MenuItem
+               onSelect = {this.postTripSpot}
+               eventKey={trip.id}>Bucket List
+              </MenuItem> */}
                 {dropdownTrips}
               </DropdownButton>
           <button className="btn btn-info" type="submit">Go to Trips</button>
