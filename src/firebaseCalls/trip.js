@@ -47,4 +47,18 @@ const deleteTrip = (tripId) => {
   })
 };
 
-export default {getTrips, postTrips, deleteTrip};
+const getSingleTrip = (tripId) => {
+  return new Promise((resolve, reject) => {
+    console.log({tripId});
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/trips/${tripId}.json`)
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
+};
+
+export default {getTrips, postTrips, deleteTrip, getSingleTrip};

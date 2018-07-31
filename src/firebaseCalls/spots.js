@@ -95,4 +95,25 @@ const getSingleSpot = (spotId) => {
   });
 };
 
-export default {getLandscapeSpots, getRegionSpots, getTimeSpots, getSeasonSpots, getSingleSpot};
+const getSpots = () => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/spots.json`)
+      .then(res => {
+        const spots = [];
+        if (res.data !== null) {
+          Object.keys(res.data).forEach(fbKey => {
+            res.data[fbKey].id = fbKey;
+            spots.push(res.data[fbKey]);
+          });
+        }
+        resolve(spots);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
+};
+
+
+export default {getLandscapeSpots, getRegionSpots, getTimeSpots, getSeasonSpots, getSingleSpot, getSpots};
