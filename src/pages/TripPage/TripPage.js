@@ -11,6 +11,7 @@ class TripPage extends React.Component {
   state = {
     trip: {},
     tripSpots: [],
+    spots: [],
   }
 
   componentDidMount () {
@@ -43,10 +44,18 @@ class TripPage extends React.Component {
   }
 
   render () {
-    const {trip} = this.state;
+    const {trip, tripSpots, spots} = this.state;
+    const getSpots = tripSpots.map((tripSpot) => {
+      const spot = spots.find(x => x.id === tripSpot.spotId)
+       if (spot)  {return (
+          <h4>{spot.locationName}</h4>
+        )}
+        return '';
+    })
     return (
       <div className="TripPage">
         <h4>{trip.tripName}</h4>
+        {getSpots}
       </div>
     );
   }
