@@ -1,5 +1,5 @@
 import React from 'react';
-import tripRequest from '../../firebaseCalls/trip';
+import tripRequests from '../../firebaseCalls/trip';
 import spotRequests from '../../firebaseCalls/spots';
 import TripSpot from '../../components/TripSpot/TripSpot';
 import tripSpotRequests from '../../firebaseCalls/tripSpot';
@@ -34,10 +34,12 @@ class TripPage extends React.Component {
       })
   }
 
+
+
   componentDidMount () {
     const tripId = this.props.match.params.tripId;
     // const tripSpotIds =
-    tripRequest
+    tripRequests
       .getSingleTrip(tripId)
       .then((trip) => {
         this.setState({trip});
@@ -79,9 +81,10 @@ class TripPage extends React.Component {
     })
     return (
       <div className="TripPage">
-        <h4>{trip.tripName}</h4>
+        <h1>{trip.tripName} Trip</h1>
+        <h4>Dates: {trip.date}</h4>
+        <h4>Notes: {trip.notes}</h4>
         {getSpots}
-
       </div>
     );
   }
