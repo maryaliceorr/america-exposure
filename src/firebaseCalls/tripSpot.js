@@ -34,4 +34,17 @@ const postTripSpots = (tripSpot) => {
   })
 };
 
-export default {getTripSpots, postTripSpots};
+const deleteTripSpot = (tripSpotId) => {
+  return new Promise((resolve, reject) => {
+    axios
+    .delete(`${constants.firebaseConfig.databaseURL}/tripSpot/${tripSpotId}.json`)
+    .then((res) => {
+      resolve(res.data);
+    })
+    .catch((err) => {
+      reject(err);
+    })
+  })
+};
+
+export default {getTripSpots, postTripSpots, deleteTripSpot};

@@ -1,8 +1,9 @@
 import React from 'react';
 import tripRequest from '../../firebaseCalls/trip';
 import spotRequests from '../../firebaseCalls/spots';
-// import TripCard from '../../components/TripCard/TripCard';
+import TripSpot from '../../components/TripSpot/TripSpot';
 import tripSpotRequests from '../../firebaseCalls/tripSpot';
+
 
 import './TripPage.css';
 
@@ -12,6 +13,25 @@ class TripPage extends React.Component {
     trip: {},
     tripSpots: [],
     spots: [],
+  }
+
+  deleteSpot = (tripSpotId) => {
+    const tripId = this.props.match.params.tripId;
+    tripSpotRequests
+      .deleteTripSpot(tripSpotId)
+      .then(() => {
+        tripSpotRequests
+        .getTripSpots(tripId)
+        .then((tripSpots) => {
+        this.setState({tripSpots})
+        })
+        .catch((error) => {
+          console.error('error with get TripSpots', error);
+        });
+      })
+      .catch((error) => {
+        console.error('error with deleteSpot', error);
+      })
   }
 
   componentDidMount () {
@@ -48,7 +68,12 @@ class TripPage extends React.Component {
     const getSpots = tripSpots.map((tripSpot) => {
       const spot = spots.find(x => x.id === tripSpot.spotId)
        if (spot)  {return (
-          <h4>{spot.locationName}</h4>
+          <TripSpot
+            key={tripSpot.id}
+            spot={spot}
+            tripSpotId = {tripSpot.id}
+            deleteSpot = {this.deleteSpot}
+          />
         )}
         return '';
     })
@@ -56,6 +81,7 @@ class TripPage extends React.Component {
       <div className="TripPage">
         <h4>{trip.tripName}</h4>
         {getSpots}
+
       </div>
     );
   }
