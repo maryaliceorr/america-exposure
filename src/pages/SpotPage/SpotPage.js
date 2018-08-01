@@ -4,6 +4,7 @@ import spotRequests from '../../firebaseCalls/spots';
 import tripRequests from '../../firebaseCalls/trip';
 import authRequests from '../../firebaseCalls/auth';
 import tripSpotRequests from '../../firebaseCalls/tripSpot';
+import bucketListRequests from '../../firebaseCalls/bucketList';
 
 import './SpotPage.css';
 
@@ -49,18 +50,21 @@ class SpotPage extends React.Component {
       });
   }
 
-  // postBucketSpot = () => {
-  //   const bucketSpot = {
-  //     spotId: (this.props.match.params.id)
-  //   }
-  //   tripSpotRequests
-  //     .postTripSpots(tripSpot)
-  //     .then(() => {
-  //     })
-  //     .catch((error) => {
-  //       console.error('error with postTripSpot request', error);
-  //     });
-  // }
+  postBucketSpot = () => {
+    const bucketSpot = {
+      uid: authRequests.getUID(),
+      spotId: (this.props.match.params.id)
+    }
+    console.log(authRequests.getUID());
+    console.log(this.props.match.params.id);
+    bucketListRequests
+      .postBucketSpots(bucketSpot)
+      .then(() => {
+      })
+      .catch((error) => {
+        console.error('error with postTripSpot request', error);
+      });
+  }
 
   render () {
     const {spot} = this.state;
@@ -69,8 +73,6 @@ class SpotPage extends React.Component {
       return (
       <MenuItem
         onSelect = {this.postTripSpot}
-
-
         eventKey={trip.id}>
         {trip.tripName}
       </MenuItem>
@@ -94,22 +96,18 @@ class SpotPage extends React.Component {
           <h5>Latitude: {spot.latitude}</h5>
           <h5>Longitude: {spot.longitude}</h5>
           <p>{spot.description}</p>
-              {/* <MenuItem
-                onSelect = {this.postTripSpot}
-                eventKey={trip.id}>
-            {trip.tripName}
-            </MenuItem> */}
-              <DropdownButton
-                bsStyle={"default"}
-                title="Select A Trip"
-                id="dropdown1"
+            <DropdownButton
+              bsStyle={"default"}
+              title="Select A Trip"
+              id="dropdown1"
+            >
+            <MenuItem
+              onSelect = {this.postBucketSpot}
               >
-              {/* <MenuItem
-               onSelect = {this.postTripSpot}
-               eventKey={trip.id}>Bucket List
-              </MenuItem> */}
-                {dropdownTrips}
-              </DropdownButton>
+              Bucket List
+            </MenuItem>
+              {dropdownTrips}
+            </DropdownButton>
           <button className="btn btn-info" type="submit">Go to Trips</button>
       </div>
     </div>
