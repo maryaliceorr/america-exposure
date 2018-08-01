@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import tripRequests from '../../firebaseCalls/trip';
 import authRequests from '../../firebaseCalls/auth';
