@@ -1,33 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
 import tripRequests from '../../firebaseCalls/trip';
-import authRequests from '../../firebaseCalls/auth';
 
-import './MakeATripForm.css';
 
-const blankTrip = {
-  tripName:'',
-  date: '',
-  notes: '',
-};
+import './EditTripPage.css';
 
-class MakeATripForm extends React.Component {
-
-  static propTypes = {
-    onSubmit: PropTypes.func,
-  }
+class EditTripPage extends React.Component {
 
   state = {
-    newTrip: blankTrip,
+    trip: {
+      tripName: "",
+      date: "",
+      notes: "",
+    },
   }
 
-  formFieldStringState = (variable, e) => {
-    const temporaryTrip = {...this.state.newTrip};
-    temporaryTrip[variable] = e.target.value;
-    this.setState({newTrip: temporaryTrip});
-  }
+formFieldStringState = (variable, e) => {
+  const temporaryTrip = {...this.state.trip};
+  temporaryTrip[variable] = e.target.value;
+  this.setState({trip: temporaryTrip});
+}
 
 tripNameChanged = (e) => {
   this.formFieldStringState('tripName', e);
@@ -41,39 +32,50 @@ notesChanged = (e) => {
   this.formFieldStringState('notes', e);
 }
 
-postTrip = () => {
-  const newTrip = {...this.state.newTrip};
-  newTrip.uid = authRequests.getUID();
-  newTrip.dateTime = Date.now();
+componentDidMount () {
+  const singleTripId = this.props.match.params.tripId;
   tripRequests
-    .postTrips(newTrip)
-    .then(() => {
-      this.props.successfulFormPost();
+    .getSingleTrip(singleTripId)
+    .then((singleTrip) => {
+      this.setState({trip: singleTrip});
     })
     .catch((error) => {
-      console.error('error with postTrips request', error);
+      console.error('error with getTrip', error);
     });
-}
+};
+
+editTrip = (trip) => {
+    const tripId = this.props.match.params.tripId;
+    tripRequests
+      .putTrip(trip, tripId)
+      .then(() => {
+        this.props.history.push("/upcoming-trips");
+      })
+      .catch((error) => {
+        console.error('error with deleteSpot', error);
+      })
+  }
+
 
 formSubmission = (e) => {
-  const {newTrip} = this.state;
+  const {trip} = this.state;
   e.preventDefault();
   if (
-    newTrip.tripName &&
-    newTrip.date &&
-    newTrip.notes
+    trip.tripName &&
+    trip.date &&
+    trip.notes
   ) {
-    this.postTrip(this.state.newTrip);
-      this.setState({newState: blankTrip});
+    this.editTrip(trip);
   } else {
     alert('form submission is all wrong');
   }
 }
 
   render () {
-    const {newTrip} = this.state;
+    const {trip} = this.state;
     return (
-      <div className="MakeATripForm">
+      <div className="MakeATripPage">
+        <h2>EditTripPage</h2>
         <form onSubmit={this.formSubmission}>
           <div className="form-group">
             <label htmlFor="InputTripName">Trip Name</label>
@@ -82,7 +84,7 @@ formSubmission = (e) => {
             className="form-control"
             id="tripName"
             placeholder="Trip Name"
-            value={newTrip.tripName}
+            value={trip.tripName}
             onChange={this.tripNameChanged}
             />
           </div>
@@ -93,7 +95,7 @@ formSubmission = (e) => {
             className="form-control"
             id="date"
             placeholder="Date"
-            value={newTrip.date}
+            value={trip.date}
             onChange={this.dateChanged}
             />
           </div>
@@ -104,7 +106,7 @@ formSubmission = (e) => {
             className="form-control"
             id="notes"
             placeholder="Notes"
-            value={newTrip.notes}
+            value={trip.notes}
             onChange={this.notesChanged}
             />
           </div>
@@ -112,7 +114,7 @@ formSubmission = (e) => {
             type="submit"
             className="btn btn-default"
             >
-              Create Trip
+              Save Trip
             </button>
         </form>
       </div>
@@ -120,4 +122,4 @@ formSubmission = (e) => {
   }
 }
 
-export default MakeATripForm;
+export default EditTripPage;

@@ -15,14 +15,6 @@ class MakeATripButtons extends React.Component {
             To Upcoming Trips
           </button>
         </Link>
-        <Link to="/spot/:id">
-          <button
-          type="button"
-          className="btn btn-default"
-          >
-            Find More Spots
-          </button>
-        </Link>
       </div>
     );
   }

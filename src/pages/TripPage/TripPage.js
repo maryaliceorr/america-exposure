@@ -34,8 +34,6 @@ class TripPage extends React.Component {
       })
   }
 
-
-
   componentDidMount () {
     const tripId = this.props.match.params.tripId;
     // const tripSpotIds =

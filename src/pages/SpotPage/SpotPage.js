@@ -49,6 +49,19 @@ class SpotPage extends React.Component {
       });
   }
 
+  // postBucketSpot = () => {
+  //   const bucketSpot = {
+  //     spotId: (this.props.match.params.id)
+  //   }
+  //   tripSpotRequests
+  //     .postTripSpots(tripSpot)
+  //     .then(() => {
+  //     })
+  //     .catch((error) => {
+  //       console.error('error with postTripSpot request', error);
+  //     });
+  // }
+
   render () {
     const {spot} = this.state;
     const imageUrl = spot.image ? require(`../../images/spots/${spot.image}`) : null;
@@ -81,6 +94,11 @@ class SpotPage extends React.Component {
           <h5>Latitude: {spot.latitude}</h5>
           <h5>Longitude: {spot.longitude}</h5>
           <p>{spot.description}</p>
+              {/* <MenuItem
+                onSelect = {this.postTripSpot}
+                eventKey={trip.id}>
+            {trip.tripName}
+            </MenuItem> */}
               <DropdownButton
                 bsStyle={"default"}
                 title="Select A Trip"
