@@ -1,10 +1,10 @@
 import React from 'react';
-import MakeATripForm from '../../components/MakeATripForm/MakeATripForm';
+import EditTripForm from '../../components/EditTripForm/EditTripForm';
 import { Link } from 'react-router-dom';
 
-import './MakeATripPage.css';
+import './EditTripPage.css';
 
-class MakeATripPage extends React.Component {
+class EditTripPage extends React.Component {
 
   successfulFormPost = () => {
     this.props.history.push("/upcoming-trips");
@@ -12,8 +12,8 @@ class MakeATripPage extends React.Component {
   render () {
     return (
       <div className="MakeATripPage">
-        <h2>MakeATripPage</h2>
-          <MakeATripForm
+        <h2>EditTripPage</h2>
+          <EditTripForm
             successfulFormPost = {this.successfulFormPost}
           />
       </div>
@@ -21,4 +21,4 @@ class MakeATripPage extends React.Component {
   }
 }
 
-export default MakeATripPage;
+export default EditTripPage;

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import tripRequests from '../../firebaseCalls/trip';
 import authRequests from '../../firebaseCalls/auth';
 
-import './MakeATripForm.css';
+import './EditTripForm.css';
 
 const blankTrip = {
   tripName:'',
@@ -13,7 +13,7 @@ const blankTrip = {
   notes: '',
 };
 
-class MakeATripForm extends React.Component {
+class EditTripForm extends React.Component {
 
   static propTypes = {
     onSubmit: PropTypes.func,
@@ -73,7 +73,7 @@ formSubmission = (e) => {
   render () {
     const {newTrip} = this.state;
     return (
-      <div className="MakeATripForm">
+      <div className="EditTripForm">
         <form onSubmit={this.formSubmission}>
           <div className="form-group">
             <label htmlFor="InputTripName">Trip Name</label>
@@ -120,4 +120,4 @@ formSubmission = (e) => {
   }
 }
 
-export default MakeATripForm;
+export default EditTripForm;

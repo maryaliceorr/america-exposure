@@ -70,7 +70,6 @@ const putTrip = (tripId) => {
       .catch((err) => {
         reject(err);
       })
-
   });
 };
 
