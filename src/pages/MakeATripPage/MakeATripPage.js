@@ -1,6 +1,5 @@
 import React from 'react';
 import MakeATripForm from '../../components/MakeATripForm/MakeATripForm';
-import { Link } from 'react-router-dom';
 
 import './MakeATripPage.css';
 

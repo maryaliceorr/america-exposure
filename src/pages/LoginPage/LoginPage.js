@@ -4,11 +4,17 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 import './LoginPage.css';
 
 class LoginPage extends React.Component {
+
+  goToHome = () => {
+    this.props.history.push('/home');
+  }
   render () {
     return (
       <div className="LoginPage">
         <h2>LoginPage</h2>
-        <LoginForm />
+        <LoginForm
+        goToHome={this.goToHome}
+        />
       </div>
     );
   }
