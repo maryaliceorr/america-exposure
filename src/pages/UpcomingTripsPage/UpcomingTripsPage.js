@@ -24,19 +24,18 @@ class UpcomingTripsPage extends React.Component {
       });
   };
 
-
-
-  deleteTrip = (tripId) => {
-    // const tripId = this.props.match.params.tripId;
+deleteATrip = () => {
+  const uid = authRequests.getUID();
     tripRequests
-      .deleteTrip(tripId)
-      .then(() => {
-
-        })
-      .catch((error) => {
-        console.error('error with deleteTrip', error);
+      .getTrips(uid)
+      .then((trips) => {
+        this.setState({trips})
       })
-  }
+      .catch((error) => {
+        console.error('error with get Trips', error);
+      });
+  };
+
 
   render () {
     const tripCards = this.state.trips.map((trip) => {
@@ -44,6 +43,7 @@ class UpcomingTripsPage extends React.Component {
         <TripCard
           key = {trip.id}
           trip = {trip}
+          deleteATrip = {this.deleteATrip}
         />
       );
     });

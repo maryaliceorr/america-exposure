@@ -1,9 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import tripRequests from '../../firebaseCalls/trip';
 
 import './TripCard.css';
 
 class TripCard extends React.Component {
+
+  deleteTrip = () => {
+    tripRequests
+      .deleteTrip(this.props.trip.id)
+      .then(() => {
+        this.props.deleteATrip();
+        })
+      .catch((error) => {
+        console.error('error with deleteTrip', error);
+      })
+  }
 
   render () {
     const {trip} = this.props;
