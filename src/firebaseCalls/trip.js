@@ -60,10 +60,10 @@ const getSingleTrip = (tripId) => {
   });
 };
 
-const putTrip = (tripId) => {
+const putTrip = (trip, tripId) => {
   return new Promise((resolve, reject) => {
     axios
-      .put(`${constants.firebaseConfig.databaseURL}/trips/${tripId}.json`)
+      .put(`${constants.firebaseConfig.databaseURL}/trips/${tripId}.json`, trip)
       .then((res) => {
         resolve(res);
       })

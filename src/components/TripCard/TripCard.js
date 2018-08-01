@@ -5,18 +5,6 @@ import './TripCard.css';
 
 class TripCard extends React.Component {
 
-  // editTrip = (tripId) => {
-  //   // const tripId = this.props.match.params.tripId;
-  //   tripRequests
-  //     .putTrip(tripId)
-  //     .then(() => {
-  //       console.log(this.state.tripId);
-  //     })
-  //     .catch((error) => {
-  //       console.error('error with deleteSpot', error);
-  //     })
-  // }
-
   render () {
     const {trip} = this.props;
     console.log(this.props);

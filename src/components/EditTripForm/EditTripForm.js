@@ -55,66 +55,13 @@ postTrip = () => {
     });
 }
 
-formSubmission = (e) => {
-  const {newTrip} = this.state;
-  e.preventDefault();
-  if (
-    newTrip.tripName &&
-    newTrip.date &&
-    newTrip.notes
-  ) {
-    this.postTrip(this.state.newTrip);
-      this.setState({newState: blankTrip});
-  } else {
-    alert('form submission is all wrong');
-  }
-}
+
 
   render () {
-    const {newTrip} = this.state;
+
     return (
       <div className="EditTripForm">
-        <form onSubmit={this.formSubmission}>
-          <div className="form-group">
-            <label htmlFor="InputTripName">Trip Name</label>
-            <input
-            type="input"
-            className="form-control"
-            id="tripName"
-            placeholder="Trip Name"
-            value={newTrip.tripName}
-            onChange={this.tripNameChanged}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="InputDateOfTrip">Date of Your Trip</label>
-            <input
-            type="input"
-            className="form-control"
-            id="date"
-            placeholder="Date"
-            value={newTrip.date}
-            onChange={this.dateChanged}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="InputTripNotes">Notes/Description of your Upcoming Trip</label>
-            <input
-            type="text"
-            className="form-control"
-            id="notes"
-            placeholder="Notes"
-            value={newTrip.notes}
-            onChange={this.notesChanged}
-            />
-          </div>
-            <button
-            type="submit"
-            className="btn btn-default"
-            >
-              Create Trip
-            </button>
-        </form>
+
       </div>
     );
   }

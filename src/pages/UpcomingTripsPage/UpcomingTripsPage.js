@@ -24,17 +24,7 @@ class UpcomingTripsPage extends React.Component {
       });
   };
 
-  editTrip = (tripId) => {
-    // const tripId = this.props.match.params.tripId;
-    tripRequests
-      .putTrip(tripId)
-      .then(() => {
-        console.log(this.state.tripId);
-      })
-      .catch((error) => {
-        console.error('error with deleteSpot', error);
-      })
-  }
+
 
   deleteTrip = (tripId) => {
     // const tripId = this.props.match.params.tripId;
