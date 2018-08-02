@@ -33,21 +33,18 @@ state = {
   };
 
   render () {
-    const {bucketSpots, spots} = this.state;
-    const getSpots = bucketSpots.map((bucketSpot) => {
-      const spot = spots.find(x => x.id === bucketSpot.spotId)
-       if (spot)  {return (
-        <div key={bucketSpot.id}>
-          <h2>{bucketSpot.locationName}</h2>
-          <img src={bucketSpot.image} alt={bucketSpot.locationName}/>
-          <h2>Hello</h2>
+    const {bucketSpots} = this.state;
+    const getBucketSpots = bucketSpots.map((bucketSpot) => {
+       if (bucketSpots)  {return (
+        <div key={bucketSpot.spotId}>
+          <h2>{bucketSpot.spotId}</h2>
          </div>
         )}
         return '';
-    })
+      })
     return (
       <div className="BucketListPage">
-        {getSpots}
+        {getBucketSpots}
       </div>
     );
   }
