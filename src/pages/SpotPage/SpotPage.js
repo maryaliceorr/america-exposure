@@ -53,7 +53,7 @@ class SpotPage extends React.Component {
   postBucketSpot = () => {
     const bucketSpot = {
       uid: authRequests.getUID(),
-      spotId: (this.props.match.params.id)
+      bucketSpotId: (this.props.match.params.id)
     }
     console.log(this.props.match.params.id);
     bucketListRequests

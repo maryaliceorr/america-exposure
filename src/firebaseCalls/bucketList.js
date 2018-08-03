@@ -34,4 +34,17 @@ const getBucketSpots = (uid) => {
   });
 };
 
-export default {postBucketSpots, getBucketSpots};
+const deleteBucketSpot = (bucketSpotId) => {
+  return new Promise((resolve, reject) => {
+    axios
+    .delete(`${constants.firebaseConfig.databaseURL}/bucketList/${bucketSpotId}.json`)
+    .then((res) => {
+      resolve(res.data);
+    })
+    .catch((err) => {
+      reject(err);
+    })
+  })
+};
+
+export default {postBucketSpots, getBucketSpots, deleteBucketSpot};

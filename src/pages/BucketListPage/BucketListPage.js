@@ -3,6 +3,7 @@ import React from 'react';
 import bucketListRequests from '../../firebaseCalls/bucketList';
 import authRequests from '../../firebaseCalls/auth';
 import spotRequests from '../../firebaseCalls/spots';
+import BucketSpot from '../../components/BucketSpot/BucketSpot';
 
 import './BucketListPage.css';
 
@@ -10,6 +11,26 @@ class BucketListPage extends React.Component {
 
 state = {
   bucketSpots: [],
+  spots: [],
+}
+
+deleteBucketSpot = (bucketSpotId) => {
+  const uid = authRequests.getUID();
+  bucketListRequests
+    .deleteBucketSpot(bucketSpotId)
+    .then(() => {
+      bucketListRequests
+      .getBucketSpots(uid)
+      .then((bucketSpots) => {
+      this.setState({bucketSpots})
+      })
+      .catch((error) => {
+        console.error('error with get BucketSpots', error);
+      });
+    })
+    .catch((error) => {
+      console.error('error with deleteBucketSpot', error);
+    })
 }
 
   componentDidMount () {
@@ -33,41 +54,26 @@ state = {
   };
 
   render () {
-    const {bucketSpots} = this.state;
+    const {bucketSpots, spots} = this.state;
     const getBucketSpots = bucketSpots.map((bucketSpot) => {
-       if (bucketSpots)  {return (
-        <div key={bucketSpot.spotId}>
-          <h2>{bucketSpot.spotId}</h2>
-         </div>
+      const spot = spots.find(x => x.id === bucketSpot.bucketSpotId)
+       if (spot)  {return (
+         <BucketSpot
+          key={bucketSpot.id}
+          spot={spot}
+          bucketSpotId = {bucketSpot.id}
+          deleteSpot = {this.deleteBucketSpot}
+         />
         )}
         return '';
       })
     return (
       <div className="BucketListPage">
+        <h1>Bucket List</h1>
         {getBucketSpots}
       </div>
     );
   }
 }
-
-
-//     const bucketSpots = this.state.bucketSpots.map((bucketSpot) => {
-//       // const imageUrl = require(`${bucketSpot.image}`);
-//       return (
-//         <div key={bucketSpot.id}>
-//           <h2>{bucketSpot.locationName}</h2>
-//           <img src={bucketSpot.image} alt={bucketSpot.locationName}/>
-//           <h2>Hello</h2>
-//         </div>
-//       )
-//     });
-//     return (
-//       <div className="BucketList">
-//         <h1>Bucket List</h1>
-//         {bucketSpots}
-//       </div>
-//     );
-//   }
-// }
 
 export default BucketListPage;
