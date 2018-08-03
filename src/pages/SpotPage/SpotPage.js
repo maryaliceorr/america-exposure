@@ -1,5 +1,6 @@
 import React from 'react';
 import {DropdownButton, MenuItem } from 'react-bootstrap';
+import subCategoriesRequest from '../../firebaseCalls/subCategories';
 import spotRequests from '../../firebaseCalls/spots';
 import tripRequests from '../../firebaseCalls/trip';
 import authRequests from '../../firebaseCalls/auth';
@@ -18,6 +19,14 @@ class SpotPage extends React.Component {
   componentDidMount () {
     const spotId = this.props.match.params.id;
     const uid = authRequests.getUID();
+    subCategoriesRequest
+    .getSubCategories()
+    .then((subCategories) => {
+      this.setState({subCategories})
+    })
+    .catch((error) => {
+      console.error('error with get subCategories request', error);
+    });
     spotRequests
       .getSingleSpot(spotId)
       .then((spot) => {
@@ -53,9 +62,8 @@ class SpotPage extends React.Component {
   postBucketSpot = () => {
     const bucketSpot = {
       uid: authRequests.getUID(),
-      spotId: (this.props.match.params.id)
+      bucketSpotId: (this.props.match.params.id)
     }
-    console.log(authRequests.getUID());
     console.log(this.props.match.params.id);
     bucketListRequests
       .postBucketSpots(bucketSpot)
@@ -69,6 +77,7 @@ class SpotPage extends React.Component {
   render () {
     const {spot} = this.state;
     const imageUrl = spot.image ? require(`../../images/spots/${spot.image}`) : null;
+
     const dropdownTrips = this.state.trips.map((trip) => {
       return (
       <MenuItem
@@ -78,6 +87,14 @@ class SpotPage extends React.Component {
       </MenuItem>
       )
     })
+
+    // const landscapeName = (spot, subCategory) => {
+    //   if (spot.landscapeId === subCategory.id) {
+    //     return (
+    //       subCategory.subCategoryName
+    //     )
+    //   }
+    // }
 
     return (
       <div className="SpotsCard">
@@ -92,7 +109,7 @@ class SpotPage extends React.Component {
           <h5>Best Time of Day to Shoot: {spot.timeId}</h5>
           <h5>Best Season to Shoot: {spot.seasonDescrip}</h5>
           <h5>Permit: {spot.permit}</h5>
-          <h3>Coordinates:</h3>
+          <h4>Coordinates:</h4>
           <h5>Latitude: {spot.latitude}</h5>
           <h5>Longitude: {spot.longitude}</h5>
           <p>{spot.description}</p>

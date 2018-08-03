@@ -8,7 +8,7 @@ class SplashPage extends React.Component {
     return (
       <div className="SplashPage">
         <h2>Splash Page</h2>
-        <h4>We expose hidden landscape gems in the United States for all photographers to find</h4>
+        <h4><strong>Our Mission: </strong>To expose hidden landscape gems in the United States for all photographers to find</h4>
         <Link to="/register">
           <button
           type="button"
