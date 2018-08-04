@@ -25,14 +25,15 @@ state = {
 
 
     const categoryComponents = this.state.categories.map((category) => {
-      const imageUrl = require(`${category.imgUrl}`);
+      // const imageUrl = require(`${category.imgUrl}`);
       return (
         <div key={category.id}>
-        <img src={imageUrl} alt={category.name}/>
+        {/* <img src={imageUrl} alt={category.name}/> */}
         <Link to={`/categories/${category.id}`}>
           <button
           type="button"
           className="btn btn-default"
+          id={category.id}
           >
             {category.categoryName}
           </button>
@@ -40,10 +41,16 @@ state = {
         </div>
       )
     });
+
     return (
-      <div className="CameraNav">
-        <h2>CameraNav</h2>
-        {categoryComponents}
+      <div className="CameraNav text-center">
+        <div className="top-space text-center">
+          <img className="homepage-logo text-center" src={require("./brand/logo.png")} alt="america exposure logo"/>
+        </div>
+        <h2>Pick a Category</h2>
+        <div className="text-center camera-nav-div">
+          <div className="nav-buttons">{categoryComponents}</div>
+        </div>
       </div>
     );
   }
