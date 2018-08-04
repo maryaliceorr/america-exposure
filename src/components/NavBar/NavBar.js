@@ -10,7 +10,7 @@ class NavBar extends React.Component {
     const logoutOfAppEvent = () => {
       fbAuthRequests.logoutVisitor();
       adios();
-    }
+    };
 
     return (
       <div className="NavBar">
@@ -51,11 +51,7 @@ class NavBar extends React.Component {
                     </li>
                   </ul>
                 ) : (
-                  <ul className="nav navbar-nav navbar-right">
-                    <li>
-                      <Link to="/login" className="navbar-brand">Login</Link>
-                    </li>
-                  </ul>
+                  <div></div>
                 )
               }
 

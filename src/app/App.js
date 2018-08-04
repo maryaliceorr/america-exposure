@@ -20,7 +20,7 @@ import EditTripPage from '../pages/EditTripPage/EditTripPage';
 import fbConnection from '../firebaseCalls/connection';
 fbConnection();
 
-const PrivateRoute = ({component: Component, authed, ...rest}) => {
+const PrivateRoute = ({ component: Component, authed, ...rest}) => {
   return (
     <Route
       {...rest}
@@ -29,7 +29,7 @@ const PrivateRoute = ({component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{pathname: '/splash', state: {from: props.location}}}
+            to={{ pathname: '/splash', state: {from: props.location}}}
           />
         )
       }
@@ -37,7 +37,7 @@ const PrivateRoute = ({component: Component, authed, ...rest}) => {
   );
 };
 
-const PublicRoute = ({component: Component, authed, ...rest}) => {
+const PublicRoute = ({ component: Component, authed, ...rest}) => {
   return (
     <Route
       {...rest}
@@ -87,68 +87,70 @@ class App extends React.Component {
               adios={this.adios}
             />
             <div className="container">
-              <Switch>
-                <PublicRoute
-                path="/splash"
-                authed={this.state.authed}
-                component={SplashPage}
-                />
-                <PublicRoute
-                path="/register"
-                authed={this.state.authed}
-                component={RegisterPage}
-                />
-                <PublicRoute
-                  path="/login"
+              <div className="row">
+                <Switch>
+                  <PublicRoute
+                  path="/splash"
                   authed={this.state.authed}
-                  component={LoginPage}
-                />
-                <PrivateRoute
-                  path="/home"
+                  component={SplashPage}
+                  />
+                  <PublicRoute
+                  path="/register"
                   authed={this.state.authed}
-                  component={Homepage}
-                />
-                <PrivateRoute
-                  path="/bucket-list"
-                  authed={this.state.authed}
-                  component={BucketListPage}
-                />
-                <PrivateRoute
-                  path="/categories/:categoryId"
-                  authed={this.state.authed}
-                  component={SubCategoryPage}
-                />
-                <PrivateRoute
-                  path="/subcategories/:subCategoryId"
-                  authed={this.state.authed}
-                  component={SpotsPage}
-                />
-                <PrivateRoute
-                  path="/upcoming-trips"
-                  authed={this.state.authed}
-                  component={UpcomingTripsPage}
-                />
-                <PrivateRoute
-                  path="/spot/:id"
-                  authed={this.state.authed}
-                  component={SpotPage}
-                />
-                <PrivateRoute
-                  path="/make-a-trip"
-                  authed={this.state.authed}
-                  component={MakeATripPage}
-                />
-                <PrivateRoute
-                  path="/trip/:tripId"
-                  authed={this.state.authed}
-                  component={TripPage}
-                />
-                <PrivateRoute
-                  path="/edit/trip/:tripId"
-                  authed={this.state.authed}
-                  component={EditTripPage}
-                />
-              </Switch>
+                  component={RegisterPage}
+                  />
+                  <PublicRoute
+                    path="/login"
+                    authed={this.state.authed}
+                    component={LoginPage}
+                  />
+                  <PrivateRoute
+                    path="/home"
+                    authed={this.state.authed}
+                    component={Homepage}
+                  />
+                  <PrivateRoute
+                    path="/bucket-list"
+                    authed={this.state.authed}
+                    component={BucketListPage}
+                  />
+                  <PrivateRoute
+                    path="/categories/:categoryId"
+                    authed={this.state.authed}
+                    component={SubCategoryPage}
+                  />
+                  <PrivateRoute
+                    path="/subcategories/:subCategoryId"
+                    authed={this.state.authed}
+                    component={SpotsPage}
+                  />
+                  <PrivateRoute
+                    path="/upcoming-trips"
+                    authed={this.state.authed}
+                    component={UpcomingTripsPage}
+                  />
+                  <PrivateRoute
+                    path="/spot/:id"
+                    authed={this.state.authed}
+                    component={SpotPage}
+                  />
+                  <PrivateRoute
+                    path="/make-a-trip"
+                    authed={this.state.authed}
+                    component={MakeATripPage}
+                  />
+                  <PrivateRoute
+                    path="/trip/:tripId"
+                    authed={this.state.authed}
+                    component={TripPage}
+                  />
+                  <PrivateRoute
+                    path="/edit/trip/:tripId"
+                    authed={this.state.authed}
+                    component={EditTripPage}
+                  />
+                </Switch>
+              </div>
             </div>
           </div>
         </BrowserRouter>
