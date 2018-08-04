@@ -2,13 +2,14 @@
 .CameraNav{
 
   .top-space {
-    height: 300px;
+    height: 250px;
     margin: 0px;
     padding: 0px
   }
 
   h2 {
-    padding-top: 20px;
+    padding: 20px;
+    color: white;
   }
   .camera-nav-div {
   width: 100%;
@@ -31,29 +32,21 @@
 
   .homepage-logo {
     width: 250px;
-    margin-bottom: 20px;
+    margin: 20px;
   }
 
   .nav-buttons {
+    // border: 10px solid white;
+    width: 400px;
+    height: 200px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 300px;
   }
 
-  #category01 {
-    margin-top: 310px;
-    margin-left: 422px;
-  }
-  #category02 {
-    margin-top: 310px;
-    margin-left: 30px;
-  }
-  #category03 {
-    margin-top: 70px;
-    margin-left: 422px;
-  }
-  #category04 {
-    margin-top: 70px;
-    margin-left: 30px;
+  .btn{
+    margin: 15px;
   }
 
 }
