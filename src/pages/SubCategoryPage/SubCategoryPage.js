@@ -28,7 +28,7 @@ class SubCategoryPage extends React.Component {
     const subCategoryCards = this.state.subCategories.map((subCategory) => {
       const imageUrl = require(`${subCategory.imgUrl}`);
       return (
-        <div key={subCategory.id}>
+        <div className="photo-card" key={subCategory.id}>
           <Link to={`/subcategories/${subCategory.id}`}>
             <img src={imageUrl} alt={subCategory.subCategoryName}/>
             <button

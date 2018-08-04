@@ -1,5 +1,5 @@
 import React from 'react';
-import {DropdownButton, MenuItem } from 'react-bootstrap';
+import {DropdownButton, MenuItem, Alert } from 'react-bootstrap';
 import subCategoriesRequest from '../../firebaseCalls/subCategories';
 import spotRequests from '../../firebaseCalls/spots';
 import tripRequests from '../../firebaseCalls/trip';
@@ -14,8 +14,21 @@ class SpotPage extends React.Component {
   state = {
     spot: {},
     trips: [],
+    alert: {
+      show: false,
+      spotName: "",
+      tripName:"",
+    }
   }
 
+  closeAlert = () => {
+    const emptyAlert = {
+      show: false,
+      spotName: "",
+      tripName:"",
+    }
+    this.setState({alert: emptyAlert});
+  }
   componentDidMount () {
     const spotId = this.props.match.params.id;
     const uid = authRequests.getUID();
@@ -50,9 +63,19 @@ class SpotPage extends React.Component {
       tripId: (e),
       spotId: (this.props.match.params.id)
     }
+    const newAlert = {
+      show: true,
+      spotName: this.state.spot.locationName,
+      tripName: this.state.trips.find(x => x.id === tripSpot.tripId).tripName,
+    }
     tripSpotRequests
       .postTripSpots(tripSpot)
       .then(() => {
+        this.setState({alert: newAlert});
+
+        // alertSpotName: "",
+        // alertTripName:"",
+        // {alert("You have succesfully add this trip")}
       })
       .catch((error) => {
         console.error('error with postTripSpot request', error);
@@ -95,9 +118,21 @@ class SpotPage extends React.Component {
     //     )
     //   }
     // }
+    const alertStuff = () => {
+      const myAlert = this.state.alert;
+      if(myAlert.show){
+        return (
+          <Alert
+            bsStyle="warning"
+            onDismiss={this.closeAlert}
+          >You added {myAlert.spotName} to the {myAlert.tripName} Trip!!</Alert>
+        )
+      }
+    }
 
     return (
       <div className="SpotsCard">
+      {alertStuff()}
       <div>
         <h1>{spot.locationName}</h1>
         <div className="AllSpotsInfo">
