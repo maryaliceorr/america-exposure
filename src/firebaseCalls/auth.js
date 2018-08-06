@@ -9,7 +9,7 @@ const loginVisitor = (visitor) => {
 }
 
 const logoutVisitor = () => {
-  return firebase.auth().signOut;
+  return firebase.auth().signOut();
 };
 
 const getUID = () => {
