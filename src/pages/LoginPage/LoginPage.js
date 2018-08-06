@@ -9,12 +9,12 @@ class LoginPage extends React.Component {
 
     state = {
       visitor: {
-        email: 'm.a.orr17@gmail.com',
-        password: 'Password123',
+        email: '',
+        password: '',
       },
     };
 
-    loginToAppEvent = (e) => {
+    loginToSiteEvent = (e) => {
       const {visitor} = this.state;
       e.preventDefault();
       fbAuthRequests
@@ -73,7 +73,7 @@ class LoginPage extends React.Component {
           <button
           type="submit"
           className="btn btn-default"
-          onClick={this.loginToAppEvent}
+          onClick={this.loginToSiteEvent}
           >
           Submit
           </button>
