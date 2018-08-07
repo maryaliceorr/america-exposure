@@ -90,15 +90,10 @@ class App extends React.Component {
               <div className="row">
                 <Switch>
                   <Route path="/" exact component={SplashPage}/>
-                  {/* <PublicRoute
-                  path="/"
-                  authed={this.state.authed}
-                  component={SplashPage}
-                  /> */}
                   <PublicRoute
-                  path="/register"
-                  authed={this.state.authed}
-                  component={RegisterPage}
+                    path="/register"
+                    authed={this.state.authed}
+                    component={RegisterPage}
                   />
                   <PublicRoute
                     path="/login"

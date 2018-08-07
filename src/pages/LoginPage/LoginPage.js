@@ -40,7 +40,6 @@ class LoginPage extends React.Component {
   };
 
   render () {
-
     const {visitor} = this.state;
     return (
       <div className="Login">
@@ -61,7 +60,7 @@ class LoginPage extends React.Component {
             <input
             type="password"
             className="form-control"
-            id="=inputPassword"
+            id="inputPassword"
             placeholder="Password"
             value={visitor.password}
             onChange={this.passwordChanged}
