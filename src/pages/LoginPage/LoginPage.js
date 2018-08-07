@@ -73,7 +73,7 @@ class LoginPage extends React.Component {
           <button
           type="submit"
           className="btn btn-default"
-          onClick={this.loginToAppEvent}
+          onSubmit={this.loginToAppEvent}
           >
           Submit
           </button>

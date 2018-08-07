@@ -69,7 +69,7 @@ passwordChanged = e => {
         <button
         type="submit"
         className="btn btn-default"
-        onClick={this.registerForAppEvent}
+        onSubmit={this.registerForAppEvent}
         >
         Submit
         </button>

@@ -29,7 +29,7 @@ const PrivateRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/splash', state: {from: props.location}}}
+            to={{ pathname: '/', state: {from: props.location}}}
           />
         )
       }
@@ -85,15 +85,17 @@ class App extends React.Component {
             <NavBar
               authed={this.state.authed}
               adios={this.adios}
+              history={this.props.history}
             />
             <div className="container">
               <div className="row">
                 <Switch>
-                  <PublicRoute
-                  path="/splash"
+                <Route path="/" exact component={SplashPage}/>
+                  {/* <PublicRoute
+                  path="/"
                   authed={this.state.authed}
                   component={SplashPage}
-                  />
+                  /> */}
                   <PublicRoute
                   path="/register"
                   authed={this.state.authed}
