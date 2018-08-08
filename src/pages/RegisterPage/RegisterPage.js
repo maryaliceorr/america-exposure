@@ -40,7 +40,8 @@ passwordChanged = e => {
     const {visitor} = this.state;
     return (
       <div className="Register">
-      <form>
+      <h2>REGISTER HERE</h2>
+      <form className="col-md-6 col-md-offset-3">
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input

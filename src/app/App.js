@@ -4,6 +4,7 @@ import firebase from 'firebase';
 
 import './App.css';
 
+import Footer from '../components/Footer/Footer';
 import BucketListPage from '../pages/BucketListPage/BucketListPage';
 import Homepage from '../pages/Homepage/Homepage';
 import LoginPage from '../pages/LoginPage/LoginPage';
@@ -29,7 +30,7 @@ const PrivateRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/', state: {from: props.location}}}
+            to={{ pathname: '/login', state: {from: props.location}}}
           />
         )
       }
@@ -81,13 +82,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <div>
+          <div className="app-div">
             <NavBar
               authed={this.state.authed}
               adios={this.adios}
             />
-            <div className="container">
-              <div className="row">
                 <Switch>
                   <Route path="/" exact component={SplashPage}/>
                   <PublicRoute
@@ -147,9 +146,9 @@ class App extends React.Component {
                   />
                 </Switch>
               </div>
-            </div>
-          </div>
+
         </BrowserRouter>
+        <Footer />
       </div>
     );
   }

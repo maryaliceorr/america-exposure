@@ -75,34 +75,34 @@ formSubmission = (e) => {
       <div className="MakeATripForm">
         <form onSubmit={this.formSubmission}>
           <div className="form-group">
-            <label htmlFor="InputTripName">Trip Name</label>
+            <label htmlFor="InputTripName">Trip</label>
             <input
             type="input"
             className="form-control"
             id="tripName"
-            placeholder="Trip Name"
+            placeholder="Example: Out West 2018"
             value={newTrip.tripName}
             onChange={this.tripNameChanged}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="InputDateOfTrip">Date of Your Trip</label>
+            <label htmlFor="InputDateOfTrip">Date</label>
             <input
             type="input"
             className="form-control"
             id="date"
-            placeholder="Date"
+            placeholder="Example: October 20th - November 5th, 2018"
             value={newTrip.date}
             onChange={this.dateChanged}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="InputTripNotes">Notes/Description of your Upcoming Trip</label>
+            <label htmlFor="InputTripNotes">Notes</label>
             <input
             type="text"
             className="form-control"
             id="notes"
-            placeholder="Notes"
+            placeholder="Example: Will be traveling through Utah, Colorado and Wyoming"
             value={newTrip.notes}
             onChange={this.notesChanged}
             />

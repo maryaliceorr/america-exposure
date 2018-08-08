@@ -1,37 +1,41 @@
 .App {
-  text-align: center;
-}
+  font-family: 'Oswald', sans-serif;
 
-.App {
+  form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  label {
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+
+  button {
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+
+  .linking {
+    padding: 20px;
+  }
+
+  .app-div {
+    height: 0px;
+    margin: 0;
+    padding: 0;
+
+  }
+
   .container {
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     margin: 0px;
     padding: 0px;
   }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 

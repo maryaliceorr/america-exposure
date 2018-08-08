@@ -23,35 +23,39 @@ class NavBar extends React.Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <Link to="/home" className="navbar-brand">American Exposure</Link>
+              <Link to="/home" className="navbar-brand logo-nav">AMERICA EXPOSURE</Link>
             </div>
             <div className="collapse navbar-collapse">
               {
                 authed ? (
                   <ul className="nav navbar-nav navbar-right">
                     <li>
-                      <Link to="/home" className="navbar-brand">Home</Link>
+                      <Link to="/home" className="navbar-brand">HOME</Link>
                     </li>
                     <li>
-                      <Link to="/make-a-trip" className="navbar-brand">Make a Trip</Link>
+                      <Link to="/make-a-trip" className="navbar-brand">MAKE A TRIP</Link>
                     </li>
                     <li>
-                      <Link to="/upcoming-trips" className="navbar-brand">Upcoming Trips</Link>
+                      <Link to="/upcoming-trips" className="navbar-brand">UPCOMING TRIPS</Link>
                     </li>
                     <li>
-                      <Link to="/bucket-list" className="navbar-brand">Bucket List</Link>
+                      <Link to="/bucket-list" className="navbar-brand">BUCKET LIST</Link>
                     </li>
                     <li className="navbar-form">
                       <button
                         className="btn btn-danger"
                         onClick = {logoutOfAppEvent}
                         >
-                        Logout
+                        LOGOUT
                       </button>
                     </li>
                   </ul>
                 ) : (
-                  <div></div>
+                  <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <Link to="/register">Login</Link>
+                    </li>
+                  </ul>
                 )
               }
 
