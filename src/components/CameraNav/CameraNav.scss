@@ -1,25 +1,23 @@
 
 .CameraNav{
 
-  .top-space {
-    height: 250px;
-    margin: 0px;
-    padding: 0px
-  }
-
-  h2 {
-    padding: 20px;
-    color: white;
-  }
   .camera-nav-div {
   width: 100%;
   height: 700px;
-  background-image: url("./brand/camera.png");
+  background-image: url("./images/camera.png");
   background-size: 700px;
   background-repeat: no-repeat;
   background-position: center;
   margin-top: -100px;
+  }
 
+  .choose {
+   padding-top: 160px;
+  }
+
+  h3 {
+    color: white;
+    font-size: 22px;
   }
 
   .btn{
@@ -36,17 +34,23 @@
   }
 
   .nav-buttons {
-    // border: 10px solid white;
-    width: 400px;
-    height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 300px;
+  padding-top: 140px;
   }
 
-  .btn{
-    margin: 15px;
+  #category01 {
+    margin-right: 150px;
   }
 
+  #category02 {
+    margin-left: 150px;
+    margin-top: -70px;
+  }
+  #category03 {
+    margin-left: 150px;
+    margin-top: 10px;
+  }
+  #category04 {
+    margin-right: 150px;
+    margin-top: -70px;
+  }
 }

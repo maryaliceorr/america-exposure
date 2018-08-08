@@ -43,7 +43,8 @@ class LoginPage extends React.Component {
     const {visitor} = this.state;
     return (
       <div className="Login">
-        <form>
+      <h2>LOGIN HERE</h2>
+        <form className="col-md-6 col-md-offset-3">
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input
@@ -66,7 +67,7 @@ class LoginPage extends React.Component {
             onChange={this.passwordChanged}
             />
           </div>
-          <div>
+          <div className="linking">
             <Link to="/register">Not registered? Click Here.</Link>
           </div>
           <button

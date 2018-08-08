@@ -32,7 +32,7 @@ state = {
         <Link to={`/categories/${category.id}`}>
           <button
           type="button"
-          className="btn btn-default text-center"
+          className="btn btn-default"
           id={category.id}
           >
             {category.categoryName}
@@ -44,13 +44,10 @@ state = {
 
     return (
       <div className="CameraNav text-center">
-        <div className="top-space text-center">
-          <img className="homepage-logo text-center" src={require("./brand/logo.png")} alt="america exposure logo"/>
-        </div>
-        <h2>CHOOSE A CATEGORY</h2>
         <div className="text-center camera-nav-div">
-          <div className="nav-buttons col-md-2 col-md-offset-4">
-            {categoryComponents}
+        <h3 className="choose text-center">CHOOSE A CATEGORY</h3>
+          <div className="nav-buttons col-md-4 col-md-offset-4">
+              {categoryComponents}
          </div>
         </div>
       </div>

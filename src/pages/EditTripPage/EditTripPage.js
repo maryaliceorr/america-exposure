@@ -74,7 +74,7 @@ formSubmission = (e) => {
   render () {
     const {trip} = this.state;
     return (
-      <div className="MakeATripPage">
+      <div className="EditTripPage">
         <h2>EditTripPage</h2>
         <form onSubmit={this.formSubmission}>
           <div className="form-group">
