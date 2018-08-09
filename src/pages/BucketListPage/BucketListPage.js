@@ -69,8 +69,9 @@ deleteBucketSpot = (bucketSpotId) => {
       })
     return (
       <div className="BucketListPage">
-        <h1>Bucket List</h1>
+        <h1 className="text-center">Bucket List</h1>
         {getBucketSpots}
+        <div className="extra-space"></div>
       </div>
     );
   }

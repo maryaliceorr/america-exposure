@@ -1,0 +1,19 @@
+.SplashPage {
+  background-image: url("./images/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .splash-logo {
+    margin-top: 120px;
+    height: 275px;
+  }
+  h3 {
+    color: white;
+  }
+
+  .extra-space {
+    height: 700px;
+  }
+}

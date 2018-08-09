@@ -42,8 +42,8 @@ class LoginPage extends React.Component {
   render () {
     const {visitor} = this.state;
     return (
-      <div className="Login">
-      <h2>LOGIN HERE</h2>
+      <div className="LoginPage">
+      <h1 className="text-center">LOGIN HERE</h1>
         <form className="col-md-6 col-md-offset-3">
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
@@ -67,17 +67,20 @@ class LoginPage extends React.Component {
             onChange={this.passwordChanged}
             />
           </div>
-          <div className="linking">
-            <Link to="/register">Not registered? Click Here.</Link>
+          <div className="linking text-center">
+            <Link to="/register" className="linkcolor">NOT REGISTERED? SIGN UP HERE.</Link>
           </div>
-          <button
-          type="submit"
-          className="btn btn-default"
-          onClick={this.loginToSiteEvent}
-          >
-          Submit
-          </button>
+          <div className="text-center">
+            <button
+            type="submit"
+            className="btn btn-default"
+            onClick={this.loginToSiteEvent}
+            >
+            Submit
+            </button>
+          </div>
         </form>
+        <div className="extra-space"></div>
       </div>
     );
   }

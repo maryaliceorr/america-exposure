@@ -1,6 +1,12 @@
 .App {
   font-family: 'Oswald', sans-serif;
 
+  h1 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    text-transform: uppercase;
+  }
   form {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -16,9 +22,9 @@
     font-size: 18px;
   }
 
-  .linking {
-    padding: 20px;
-  }
+  // .linking {
+  //   padding: 5px;
+  // }
 
   .app-div {
     height: 0px;

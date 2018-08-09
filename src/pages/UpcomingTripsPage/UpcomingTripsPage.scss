@@ -1,0 +1,25 @@
+
+.UpcomingTripsPage{
+  background-image: url("./images/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .panel {
+    border: none;
+  }
+  h1 {
+    color: white;
+  }
+  .extra-space {
+    height: 700px;
+  }
+
+  .panel-heading {
+    background-color: #f77a31;
+    margin: 0;
+  }
+
+
+}

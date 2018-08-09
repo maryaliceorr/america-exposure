@@ -1,7 +1,30 @@
 .EditTripPage {
-  background-image: url("./images/background.jpg");
+  background-image: url("./images/background.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  .extra-space {
+    height: 700px;
+  }
+
+  input {
+    background-color: #f77a31;
+    border: none;
+    color: white;
+  }
+
+  ::placeholder {
+    color: lightgrey;
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 26px;
+  }
+
+  .button-container {
+    margin: 30px;
+  }
 }

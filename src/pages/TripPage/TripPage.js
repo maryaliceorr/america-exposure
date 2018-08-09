@@ -79,10 +79,13 @@ class TripPage extends React.Component {
     })
     return (
       <div className="TripPage">
-        <h1>{trip.tripName} Trip</h1>
-        <h4>Dates: {trip.date}</h4>
-        <h4>Notes: {trip.notes}</h4>
+        <div className="text-center">
+          <h1>{trip.tripName} Trip</h1>
+          <h4>Dates: {trip.date}</h4>
+          <h4>Notes: {trip.notes}</h4>
+        </div>
         {getSpots}
+
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Navbar}  from 'react-bootstrap';
 import fbAuthRequests from '../../firebaseCalls/auth';
 
 import './NavBar.css';
@@ -14,9 +15,11 @@ class NavBar extends React.Component {
 
     return (
       <div className="NavBar">
-            <nav className="navbar navbar-default">
+          <nav className="navbar navbar-default">
           <div className="container-fluid">
+          <Navbar.Header>
             <div className="navbar-header">
+
               <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span className="sr-only">Toggle navigation</span>
                 <span className="icon-bar"></span>
@@ -25,6 +28,8 @@ class NavBar extends React.Component {
               </button>
               <Link to="/home" className="navbar-brand logo-nav">AMERICA EXPOSURE</Link>
             </div>
+            </Navbar.Header>
+            <Navbar.Collapse>
             <div className="collapse navbar-collapse">
               {
                 authed ? (
@@ -53,13 +58,14 @@ class NavBar extends React.Component {
                 ) : (
                   <ul className="nav navbar-nav navbar-right">
                     <li>
-                      <Link to="/register">Login</Link>
+                      <Link className="login-link" to="/register">LOGIN</Link>
                     </li>
                   </ul>
                 )
               }
 
             </div>
+            </Navbar.Collapse>
           </div>
         </nav>
       </div>

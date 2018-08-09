@@ -49,8 +49,9 @@ deleteATrip = () => {
     });
     return (
       <div className="UpcomingTripsPage">
-        <h2>UpcomingTripsPage</h2>
-        {tripCards}
+        <h1 className="text-center">UPCOMING TRIPS</h1>
+            <div className="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">{tripCards}</div>
+        <div className="extra-space"></div>
       </div>
     );
   }
