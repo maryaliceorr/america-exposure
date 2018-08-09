@@ -1,12 +1,15 @@
 .BucketListPage{
-  background-image: url("./images/background.jpg");
+  background-image: url("./images/background.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   h1 {
-    padding-top: 0px;
-    margin-top: 0px;
+    color: white;
+  }
+
+  .extra-space {
+    height: 1000px;
   }
 }

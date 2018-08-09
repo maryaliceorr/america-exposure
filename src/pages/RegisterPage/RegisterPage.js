@@ -39,8 +39,8 @@ passwordChanged = e => {
   render () {
     const {visitor} = this.state;
     return (
-      <div className="Register">
-      <h2>REGISTER HERE</h2>
+      <div className="RegisterPage">
+      <h1 className="text-center">REGISTER HERE</h1>
       <form className="col-md-6 col-md-offset-3">
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
@@ -64,17 +64,20 @@ passwordChanged = e => {
           onChange={this.passwordChanged}
           />
         </div>
-        <div>
-          <Link to="/login">Already Registered? Login Here.</Link>
+        <div className="linking text-center">
+          <Link to="/login" className="linkcolor">ALREADY REGISTERED? LOGIN HERE.</Link>
         </div>
-        <button
-        type="submit"
-        className="btn btn-default"
-        onClick={this.registerForAppEvent}
-        >
-        Submit
-        </button>
+        <div className="text-center">
+          <button
+          type="submit"
+          className="btn btn-default"
+          onClick={this.registerForAppEvent}
+          >
+          Submit
+          </button>
+        </div>
       </form>
+      <div className="extra-space"></div>
     </div>
   );
 }

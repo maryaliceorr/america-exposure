@@ -86,7 +86,7 @@ formSubmission = (e) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="InputDateOfTrip">Date</label>
+            <label htmlFor="InputDateOfTrip">Dates</label>
             <input
             type="input"
             className="form-control"
@@ -107,12 +107,14 @@ formSubmission = (e) => {
             onChange={this.notesChanged}
             />
           </div>
-            <button
-            type="submit"
-            className="btn btn-default"
-            >
-              Create Trip
-            </button>
+            <div className="button-container text-center">
+              <button
+              type="submit"
+              className="btn btn-default"
+              >
+                Create Trip
+              </button>
+            </div>
         </form>
       </div>
     );

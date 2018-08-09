@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Panel} from 'react-bootstrap';
 import tripRequests from '../../firebaseCalls/trip';
 
 import './TripCard.css';
@@ -23,30 +24,38 @@ class TripCard extends React.Component {
     return (
       <div className="TripCard">
         <div>
-          <h4>{trip.tripName}</h4>
-          <h4><strong>Date: </strong>{trip.date}</h4>
-          <p><strong>Notes: </strong>{trip.notes}</p>
-          <Link to={`/trip/${trip.id}`}>
+        <Panel>
+          <Panel.Heading>
+            <Panel.Title className=" text-center trip-title">{trip.tripName}</Panel.Title>
+          </Panel.Heading>
+          <Panel.Body>
+            <h4><strong>Date: </strong>{trip.date}</h4>
+            <h4><strong>Notes: </strong>{trip.notes}</h4>
+          <div className="button-container text-center">
+            <Link to={`/trip/${trip.id}`}>
+              <button
+              type="button"
+              className="view-button btn btn-default"
+              >
+              View Trip
+              </button>
+            </Link>
+            <Link to={`/edit/trip/${trip.id}`}>
             <button
-            type="button"
-            className="btn btn-default"
+            className="btn btn-default edit-button"
             >
-            To Trip
+            Edit Trip
             </button>
-          </Link>
-          <Link to={`/edit/trip/${trip.id}`}>
-          <button
-          className="btn btn-warning"
-          >
-          Edit Trip
-          </button>
-          </Link>
-          <button
-          className="btn btn-danger"
-          onClick={this.deleteTrip}
-          >
-          Delete Trip
-          </button>
+            </Link>
+            <button
+            className="text-center btn btn-danger"
+            onClick={this.deleteTrip}
+            >
+            Delete Trip
+            </button>
+          </div>
+          </Panel.Body>
+        </Panel>
         </div>
       </div>
     );

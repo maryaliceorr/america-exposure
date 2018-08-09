@@ -12,7 +12,7 @@ class MakeATripPage extends React.Component {
   render () {
     return (
       <div className="MakeATripPage">
-        <h2 className="text-center">MAKE A TRIP</h2>
+        <h1 className="text-center">Make A Trip</h1>
         <div className="col-xs-12 col-md-6 col-md-offset-3">
           <MakeATripForm successfulFormPost={this.successfulFormPost}/>
         </div>

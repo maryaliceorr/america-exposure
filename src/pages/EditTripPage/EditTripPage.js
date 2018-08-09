@@ -67,7 +67,7 @@ formSubmission = (e) => {
   ) {
     this.editTrip(trip);
   } else {
-    alert('form submission is all wrong');
+    alert('Error. Please enter valid information');
   }
 }
 
@@ -75,48 +75,53 @@ formSubmission = (e) => {
     const {trip} = this.state;
     return (
       <div className="EditTripPage">
-        <h2>EditTripPage</h2>
-        <form onSubmit={this.formSubmission}>
-          <div className="form-group">
-            <label htmlFor="InputTripName">Trip Name</label>
-            <input
-            type="input"
-            className="form-control"
-            id="tripName"
-            placeholder="Trip Name"
-            value={trip.tripName}
-            onChange={this.tripNameChanged}
-            />
+        <h1 className="text-center">Edit Trip</h1>
+        <div className="col-xs-12 col-md-6 col-md-offset-3">
+          <form onSubmit={this.formSubmission}>
+            <div className="form-group">
+              <label htmlFor="InputTripName">Trip Name</label>
+              <input
+              type="input"
+              className="form-control"
+              id="tripName"
+              placeholder="Trip Name"
+              value={trip.tripName}
+              onChange={this.tripNameChanged}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="InputDateOfTrip">Dates</label>
+              <input
+              type="input"
+              className="form-control"
+              id="date"
+              placeholder="Dates"
+              value={trip.date}
+              onChange={this.dateChanged}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="InputTripNotes">Notes</label>
+              <input
+              type="text"
+              className="form-control"
+              id="notes"
+              placeholder="Notes"
+              value={trip.notes}
+              onChange={this.notesChanged}
+              />
+            </div>
+            <div className="button-container text-center">
+              <button
+              type="submit"
+              className="btn btn-default"
+              >
+                Save Trip
+              </button>
+              </div>
+            </form>
           </div>
-          <div className="form-group">
-            <label htmlFor="InputDateOfTrip">Date of Your Trip</label>
-            <input
-            type="input"
-            className="form-control"
-            id="date"
-            placeholder="Date"
-            value={trip.date}
-            onChange={this.dateChanged}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="InputTripNotes">Notes/Description of your Upcoming Trip</label>
-            <input
-            type="text"
-            className="form-control"
-            id="notes"
-            placeholder="Notes"
-            value={trip.notes}
-            onChange={this.notesChanged}
-            />
-          </div>
-            <button
-            type="submit"
-            className="btn btn-default"
-            >
-              Save Trip
-            </button>
-        </form>
+          <div className="extra-space"></div>
       </div>
     );
   }

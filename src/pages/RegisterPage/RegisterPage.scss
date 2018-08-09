@@ -1,0 +1,46 @@
+.RegisterPage {
+  background-image: url("./images/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .linkcolor {
+    color: #935ced;
+    font-size: 20px;
+  }
+
+  h1 {
+    color: black;
+  }
+
+  ::placeholder {
+    color: black;
+    font-size: 14px;
+  }
+
+  input {
+    background-color: #f77a31;
+    color: white;
+    border: 3px solid #f77a31;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+  label {
+    color: black;
+  }
+
+  .extra-space {
+    height: 700px;
+  }
+
+  .btn {
+    background-color: #f77a31;
+    color: black;
+    border: none;
+    margin: 20px;
+  }
+}
