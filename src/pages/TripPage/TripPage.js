@@ -81,8 +81,8 @@ class TripPage extends React.Component {
       <div className="TripPage">
         <div className="text-center trip-info">
           <h1>{trip.tripName} Trip</h1>
-          <h4>Dates: {trip.date}</h4>
-          <h4>Notes: {trip.notes}</h4>
+          <h3><strong>DATES: </strong>{trip.date}</h3>
+          <h3><strong>NOTES: </strong>{trip.notes}</h3>
         </div>
         <div>
           {getSpots}

@@ -67,7 +67,7 @@ formSubmission = (e) => {
   ) {
     this.editTrip(trip);
   } else {
-    alert('Error. Please enter valid information');
+    alert('Error. Please fill out all form inputs with valid entries.');
   }
 }
 

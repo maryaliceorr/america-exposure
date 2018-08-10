@@ -28,8 +28,8 @@ class TripCard extends React.Component {
             <Panel.Title className=" text-center trip-title">{trip.tripName}</Panel.Title>
           </Panel.Heading>
           <Panel.Body>
-            <h4><strong>Date: </strong>{trip.date}</h4>
-            <h4><strong>Notes: </strong>{trip.notes}</h4>
+            <h4><strong>DATE: </strong>{trip.date}</h4>
+            <h4><strong>NOTES: </strong>{trip.notes}</h4>
           <div className="button-container text-center">
             <Link to={`/trip/${trip.id}`}>
               <button

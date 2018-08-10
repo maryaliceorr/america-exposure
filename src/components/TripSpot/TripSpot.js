@@ -4,17 +4,14 @@ import {Panel} from 'react-bootstrap';
 import './TripSpot.css';
 
 class TripSpot extends React.Component {
-
   deleteSpotEvent = () => {
     this.props.deleteSpot(this.props.tripSpotId);
   }
-
   render () {
     const tripSpot = this.props.spot;
-    const imageUrl = tripSpot.image ? require(`../../images/spots/${tripSpot.image}`) : null;
-
+    const imageUrl = tripSpot.image ? require (`../../images/spots/${tripSpot.image}`) : null;
     return (
-      <div className="TripSpot col-md-4">
+      <div className="col-md-4 TripSpot">
         <div>
           <Panel>
             <Panel.Heading>
@@ -26,10 +23,10 @@ class TripSpot extends React.Component {
               <h4 className="text-center"><strong>Details:</strong></h4>
               <h5><strong>Location: </strong>{tripSpot.city}, {tripSpot.stateAbbr}</h5>
               <h5><strong>Region: </strong>{tripSpot.regionId}</h5>
-              <h5><strong>Landscape Category: </strong>{tripSpot.landscapeId}</h5>
+              <h5><strong>Landscape Type: </strong>{tripSpot.landscapeId}</h5>
               <h5><strong>Best Time of Day to Shoot: </strong>{tripSpot.timeId}</h5>
               <h5><strong>Best Season to Shoot: </strong>{tripSpot.seasonDescrip}</h5>
-              <h5><strong>Permit: </strong>{tripSpot.permit}</h5>
+              {tripSpot.permit === true ? <h5><strong>Permit: </strong>Required</h5> : <h5><strong>Permit: </strong>Not Required</h5> }
               <h4 className="text-center"><strong>Coordinates:</strong></h4>
               <h5><strong>Latitude: </strong>{tripSpot.latitude}</h5>
               <h5><strong>Longitude: </strong>{tripSpot.longitude}</h5>
@@ -42,7 +39,7 @@ class TripSpot extends React.Component {
           </Panel.Body>
         </Panel>
       </div>
-    </div>
+      </div>
     );
   }
 }

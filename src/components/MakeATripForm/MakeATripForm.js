@@ -65,7 +65,7 @@ formSubmission = (e) => {
     this.postTrip(this.state.newTrip);
       this.setState({newState: blankTrip});
   } else {
-    alert('form submission is all wrong');
+    alert('Error. Please fill out all form inputs with valid entries.');
   }
 }
 
