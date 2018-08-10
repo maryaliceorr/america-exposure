@@ -1,0 +1,28 @@
+.SpotsPage {
+  background-color: gainsboro;
+
+  .spot-pic {
+    height: 285px;
+    width: 380px;
+  }
+
+  .btn{
+    background-color: white;
+    opacity: 0.7;
+    border: 3px solid white;
+    color: black;
+    width: 275px;
+    font-size: 20px;
+    margin-top: -300px;
+  }
+
+  .btn:active {
+    background-color: #f77a31;
+    opacity: 1;
+  }
+
+  .extra-space {
+    height: 1500px;
+  }
+
+}

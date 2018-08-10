@@ -20,7 +20,6 @@ class TripCard extends React.Component {
 
   render () {
     const {trip} = this.props;
-    console.log(this.props);
     return (
       <div className="TripCard">
         <div>

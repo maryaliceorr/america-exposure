@@ -18,6 +18,11 @@ class SpotPage extends React.Component {
       show: false,
       spotName: "",
       tripName:"",
+    },
+    bucketAlert: {
+      show: false,
+      spotName:"",
+      bucketList: "",
     }
   }
 
@@ -29,6 +34,16 @@ class SpotPage extends React.Component {
     }
     this.setState({alert: emptyAlert});
   }
+
+  closeBucketAlert = () => {
+    const emptyAlert = {
+      show: false,
+      spotName: "",
+      bucketList: "",
+    }
+    this.setState({bucketAlert: emptyAlert});
+  }
+
   componentDidMount () {
     const spotId = this.props.match.params.id;
     const uid = authRequests.getUID();
@@ -72,10 +87,6 @@ class SpotPage extends React.Component {
       .postTripSpots(tripSpot)
       .then(() => {
         this.setState({alert: newAlert});
-
-        // alertSpotName: "",
-        // alertTripName:"",
-        // {alert("You have succesfully add this trip")}
       })
       .catch((error) => {
         console.error('error with postTripSpot request', error);
@@ -87,13 +98,18 @@ class SpotPage extends React.Component {
       uid: authRequests.getUID(),
       bucketSpotId: (this.props.match.params.id)
     }
-    console.log(this.props.match.params.id);
+    const newBucketAlert = {
+      show: true,
+      spotName: this.state.spot.locationName,
+      bucketList: this.props.match.params.id,
+    }
     bucketListRequests
       .postBucketSpots(bucketSpot)
       .then(() => {
+        this.setState({bucketAlert: newBucketAlert});
       })
       .catch((error) => {
-        console.error('error with postTripSpot request', error);
+        console.error('error with postBucketSpot request', error);
       });
   }
 
@@ -111,58 +127,82 @@ class SpotPage extends React.Component {
       )
     })
 
-    // const landscapeName = (spot, subCategory) => {
-    //   if (spot.landscapeId === subCategory.id) {
-    //     return (
-    //       subCategory.subCategoryName
-    //     )
-    //   }
-    // }
     const alertStuff = () => {
       const myAlert = this.state.alert;
       if(myAlert.show){
         return (
           <Alert
-            bsStyle="warning"
+            bsStyle="success"
             onDismiss={this.closeAlert}
-          >You added {myAlert.spotName} to the {myAlert.tripName} Trip!!</Alert>
+            className="text-center"
+          >You've successfully added <span className="upper-text">{myAlert.spotName}</span> to your <span className="upper-text">{myAlert.tripName} Trip!</span></Alert>
+        )
+      }
+    }
+
+    const bucketAlertStuff = () => {
+      const myAlert = this.state.bucketAlert;
+      if(myAlert.show){
+        return (
+          <Alert
+            bsStyle="success"
+            onDismiss={this.closeBucketAlert}
+            className="text-center"
+          >You've successfully added <span className="upper-text">{myAlert.spotName}</span> to your <span className="upper-text">Bucket List!</span></Alert>
         )
       }
     }
 
     return (
-      <div className="SpotsCard">
-      {alertStuff()}
+      <div className="SpotPage">
       <div>
-        <h1>{spot.locationName}</h1>
+        <h1 className="text-center">{spot.locationName}</h1>
+        <h3 className="national-park text-center">{spot.parkName}</h3>
         <div className="AllSpotsInfo">
-          <img src={imageUrl} alt={spot.locationName} />
-          <h4>{spot.parkName}</h4>
-          <h5>Location: {spot.city}, {spot.stateAbbr}</h5>
-          <h5>Region: {spot.regionId}</h5>
-          <h5>Landscape Category: {spot.landscapeId}</h5>
-          <h5>Best Time of Day to Shoot: {spot.timeId}</h5>
-          <h5>Best Season to Shoot: {spot.seasonDescrip}</h5>
-          <h5>Permit: {spot.permit}</h5>
-          <h4>Coordinates:</h4>
-          <h5>Latitude: {spot.latitude}</h5>
-          <h5>Longitude: {spot.longitude}</h5>
-          <p>{spot.description}</p>
-            <DropdownButton
-              bsStyle={"default"}
-              title="Select A Trip"
-              id="dropdown1"
+        <div className="row">
+          <div className="col-md-2 col-sm-2"></div>
+          <div className="col-md-4 col-sm-4 text-center">
+            <img className="spot-pic"src={imageUrl} alt={spot.locationName} />
+          </div>
+          <div className="col-md-4 col-sm-4">
+            <h3><strong>Details:</strong></h3>
+            <h4><strong>Location: </strong>{spot.city}, {spot.stateAbbr}</h4>
+            <h4><strong>Region: </strong>{spot.regionId}</h4>
+            <h4><strong>Landscape Category: </strong>{spot.landscapeId}</h4>
+            <h4><strong>Best Time of Day to Shoot: </strong>{spot.timeId}</h4>
+            <h4><strong>Best Season to Shoot: </strong>{spot.seasonDescrip}</h4>
+            {spot.permit === true ? <h4><strong>Permit: </strong>Required</h4> : <h4>Permit: Not Required</h4> }
+            <h3><strong>Coordinates:</strong></h3>
+            <h4><strong>Latitude: </strong>{spot.latitude}</h4>
+            <h4><strong>Longitude: </strong>{spot.longitude}</h4>
+          </div>
+          <div className="col-md-2 col-sm-2"></div>
+        </div>
+        <div className="row">
+          <p className="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">{spot.description}</p>
+        </div>
+        <div className="text-center">
+          {alertStuff()}
+          {bucketAlertStuff()}
+        </div>
+        <div className="text-center drop-button-group">
+          <DropdownButton
+            bsStyle={"default"}
+            title="Select A Trip"
+            id="dropdown1"
+            className="drop-button"
+          >
+          <MenuItem
+            onSelect = {this.postBucketSpot}
             >
-            <MenuItem
-              onSelect = {this.postBucketSpot}
-              >
-              Bucket List
-            </MenuItem>
-              {dropdownTrips}
-            </DropdownButton>
-          <button className="btn btn-info" type="submit">Go to Trips</button>
+            Bucket List
+          </MenuItem>
+            {dropdownTrips}
+          </DropdownButton>
+        </div>
       </div>
     </div>
+    <div className="extra-space"></div>
   </div>
     );
   }
