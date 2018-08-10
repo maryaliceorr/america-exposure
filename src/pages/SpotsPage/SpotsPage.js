@@ -26,21 +26,24 @@ state = {
   };
 
   render () {
-
     const spotsCards = this.state.spots.map((spot) => {
       const imageUrl = require(`../../images/spots/${spot.image}`);
       return (
-        <div key={spot.id}>
+        <div className="col-md-4" key={spot.id}>
           <Link to={`/spot/${spot.id}`}>
-          <img src={imageUrl} alt={spot.locationName} />
-            <button
-            type="button"
-            className="btn btn-default"
-            >
-              {spot.locationName}
-            </button>
+            <div className="spot-container">
+              <img className="spot-pic" src={imageUrl} alt={spot.locationName} />
+            </div>
+            <div className="text-center">
+              <button
+              type="button"
+              className="btn btn-default"
+              >
+                {spot.locationName}
+              </button>
+            </div>
           </Link>
-          </div>
+        </div>
       );
     });
     const subCategoryId = (this.props.match.params.subCategoryId);
@@ -48,8 +51,11 @@ state = {
 
     return (
       <div className="SpotsPage">
-        <h1>{subCategoryName}</h1>
+        <h1 className="text-center">{subCategoryName}</h1>
+        <div className="text-center">
         {spotsCards}
+        </div>
+        <div className="extra-space"></div>
       </div>
     );
   }

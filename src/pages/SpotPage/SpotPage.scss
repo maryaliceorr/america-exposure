@@ -1,0 +1,55 @@
+.SpotPage {
+  background-color: gainsboro;
+
+.alert {
+  background-color: #935ced;
+  border: 1px solid #281942;
+  color: #281942;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+span {
+  color: #281942;
+  font-size: 35px;
+}
+
+ .spot-pic {
+    width: 100%;
+    height: 325px;
+  }
+
+  .national-park {
+    padding-bottom: 20px;
+  }
+
+  .drop-button {
+    background-color: #f77a31;
+    font-size: 24px;
+    border: none;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .drop-button-group {
+    margin-top: 20px;
+    margin-bottom: 200px;
+  }
+
+  li {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  .extra-space {
+    height: 200px;
+  }
+
+  .upper-text {
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+}

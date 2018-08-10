@@ -28,17 +28,22 @@ class SubCategoryPage extends React.Component {
     const subCategoryCards = this.state.subCategories.map((subCategory) => {
       const imageUrl = require(`${subCategory.imgUrl}`);
       return (
-        <div className="photo-card" key={subCategory.id}>
+        <div className="photo-card col-md-4" key={subCategory.id}>
           <Link to={`/subcategories/${subCategory.id}`}>
-            <img src={imageUrl} alt={subCategory.subCategoryName}/>
-            <button
-            type="button"
-            className="btn btn-default"
-            >
-              {subCategory.subCategoryName}
-            </button>
+            <div className="spot-container">
+              <img className="spot-pic" src={imageUrl} alt={subCategory.subCategoryName}/>
+            </div>
+              <div className="text-center">
+                <button
+                type="button"
+                className="text-center btn btn-default"
+                >
+                  {subCategory.subCategoryName}
+                </button>
+              </div>
+
           </Link>
-          </div>
+        </div>
       );
     });
 
@@ -47,8 +52,11 @@ class SubCategoryPage extends React.Component {
 
     return (
       <div className="SubCategoryPage">
-        <h1>{categoryName}</h1>
+        <h1 className="text-center">{categoryName}</h1>
+        <div className="text-center">
         {subCategoryCards}
+        </div>
+        <div className="extra-space"></div>
       </div>
     );
   }
