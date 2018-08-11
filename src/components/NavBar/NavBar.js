@@ -16,7 +16,7 @@ class NavBar extends React.Component {
     return (
       <Navbar collapseOnSelect>
         <Navbar.Header>
-          <Navbar.Brand>
+          <Navbar.Brand >
             <Link to="/home" className="navbar-brand logo-nav">AMERICA EXPOSURE</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
@@ -25,21 +25,21 @@ class NavBar extends React.Component {
           {
             authed ? (
               <Nav pullRight>
-                <NavItem eventKey={1}>
-                  <Link to="/home">HOME</Link>
+                <NavItem className="menu-hover" eventKey={1}>
+                  <Link className="menu-linker" to="/home">HOME</Link>
                 </NavItem>
-                <NavItem eventKey={2}>
-                  <Link to="/make-a-trip">MAKE A TRIP</Link>
+                <NavItem className="menu-hover" eventKey={2}>
+                  <Link className="menu-linker"  to="/make-a-trip">MAKE A TRIP</Link>
                 </NavItem>
-                <NavItem eventKey={3}>
-                  <Link to="/upcoming-trips">UPCOMING TRIPS</Link>
+                <NavItem className="menu-hover" eventKey={3}>
+                  <Link className="menu-linker"  to="/upcoming-trips">UPCOMING TRIPS</Link>
                 </NavItem>
-                <NavItem eventKey={4}>
-                  <Link to="/bucket-list">BUCKET LIST</Link>
+                <NavItem className="menu-hover" eventKey={4}>
+                  <Link className="menu-linker"  to="/bucket-list">BUCKET LIST</Link>
                 </NavItem>
-                <NavItem className="navbar-form" eventKey={5}>
+                <NavItem eventKey={5}>
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-danger logout-button"
                     onClick = {logoutOfAppEvent}
                     >
                     LOGOUT
