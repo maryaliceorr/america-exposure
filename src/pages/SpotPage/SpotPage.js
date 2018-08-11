@@ -155,7 +155,6 @@ class SpotPage extends React.Component {
 
     return (
       <div className="SpotPage">
-      <div>
         <h1 className="text-center">{spot.locationName}</h1>
         <h3 className="national-park text-center">{spot.parkName}</h3>
         <div className="AllSpotsInfo">
@@ -168,7 +167,7 @@ class SpotPage extends React.Component {
             <h3><strong>Details:</strong></h3>
             <h4><strong>Location: </strong>{spot.city}, {spot.stateAbbr}</h4>
             <h4><strong>Region: </strong>{spot.regionId}</h4>
-            <h4><strong>Landscape Category: </strong>{spot.landscapeId}</h4>
+            <h4><strong>Landscape Type: </strong>{spot.landscapeId}</h4>
             <h4><strong>Best Time of Day to Shoot: </strong>{spot.timeId}</h4>
             <h4><strong>Best Season to Shoot: </strong>{spot.seasonDescrip}</h4>
             {spot.permit === true ? <h4><strong>Permit: </strong>Required</h4> : <h4>Permit: Not Required</h4> }
@@ -201,7 +200,6 @@ class SpotPage extends React.Component {
           </DropdownButton>
         </div>
       </div>
-    </div>
     <div className="extra-space"></div>
   </div>
     );

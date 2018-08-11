@@ -40,6 +40,7 @@ state = {
               className="btn btn-default"
               >
                 {spot.locationName}
+                <h5>{spot.city}, {spot.state}</h5>
               </button>
             </div>
           </Link>

@@ -1,26 +1,8 @@
 
 .NavBar {
-  .navbar {
-    margin-bottom: 0px;
-    background-color: white;
-  }
-  ul.nav a:hover{
-    // color: #764bbc;
+  .menu-linker a:hover {
     color: #935ced;
+    text-decoration: none;
   }
-  .navbar-brand {
-    color: gray;
-    font-size: 20px;
-  }
-
-  .logo-nav {
-    color: #f77a31;
-    font-size: 26px;
-  }
-
-  .login-link {
-    font-size: 22px;
-  }
-
 }
 
