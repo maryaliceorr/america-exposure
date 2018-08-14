@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {Panel} from 'react-bootstrap';
+import {Panel, Glyphicon} from 'react-bootstrap';
 import tripRequests from '../../firebaseCalls/trip';
 
 import './TripCard.css';
@@ -31,6 +31,7 @@ class TripCard extends React.Component {
             <h4><strong>DATE: </strong>{trip.date}</h4>
             <h4><strong>NOTES: </strong>{trip.notes}</h4>
           <div className="button-container text-center">
+
             <Link to={`/trip/${trip.id}`}>
               <button
               type="button"
@@ -47,10 +48,10 @@ class TripCard extends React.Component {
             </button>
             </Link>
             <button
-            className="text-center btn btn-danger"
+            className="text-center btn btn-danger trash-button"
             onClick={this.deleteTrip}
             >
-            Delete Trip
+            <Glyphicon glyph="trash" />
             </button>
           </div>
           </Panel.Body>

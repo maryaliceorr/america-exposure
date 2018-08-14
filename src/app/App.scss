@@ -1,6 +1,7 @@
 .App {
   font-family: 'Oswald', sans-serif;
 
+  //---- Navbar----
   .navbar {
     margin-bottom: 0px;
     background-color: white;
@@ -15,9 +16,10 @@
   .menu-linker {
     color: #828589;
     font-size: 20px;
+    padding: 3px;
   }
 
-  a:active {
+ .menu-hover a:focus {
     color: #281942;
     text-decoration: none;
   }
@@ -32,9 +34,20 @@
    margin-bottom: -10px;
   }
 
-  .login-link {
+  .login-linker {
     color: #828589;
     font-size: 20px;
+    padding: 10px;
+  }
+
+  .login-hover a:hover {
+    color: #935ced;
+    text-decoration: none;
+  }
+
+  .login-hover a:focus {
+    color: #281942;
+    text-decoration: none;
   }
 
   h1 {

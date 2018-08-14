@@ -48,8 +48,8 @@ class NavBar extends React.Component {
               </Nav>
             ) : (
               <Nav pullRight>
-                <NavItem eventKey={1}>
-                  <Link className="login-link" to="/register">LOGIN</Link>
+                <NavItem className="login-hover" eventKey={1}>
+                  <Link className="login-linker" to="/register">LOGIN</Link>
                 </NavItem>
               </Nav>
             )

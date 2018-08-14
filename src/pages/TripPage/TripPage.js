@@ -80,7 +80,7 @@ class TripPage extends React.Component {
     return (
       <div className="TripPage">
         <div className="text-center trip-info">
-          <h1>{trip.tripName} Trip</h1>
+          <h1>{trip.tripName}</h1>
           <h3><strong>DATES: </strong>{trip.date}</h3>
           <h3><strong>NOTES: </strong>{trip.notes}</h3>
         </div>
