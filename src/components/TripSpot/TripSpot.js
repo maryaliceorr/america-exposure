@@ -1,5 +1,5 @@
 import React from 'react';
-import {Panel} from 'react-bootstrap';
+import {Panel, Glyphicon} from 'react-bootstrap';
 
 import './TripSpot.css';
 
@@ -34,7 +34,7 @@ class TripSpot extends React.Component {
             <div className="text-center button-container">
             <button className="btn btn-danger"
             onClick={this.deleteSpotEvent}
-            >DELETE</button>
+            ><Glyphicon glyph="trash" /></button>
             </div>
           </Panel.Body>
         </Panel>

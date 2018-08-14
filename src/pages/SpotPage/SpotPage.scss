@@ -1,5 +1,9 @@
 .SpotPage {
-  background-color: gainsboro;
+  background-image: url("./images/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
 .alert {
   background-color: #935ced;
@@ -9,21 +13,29 @@
   margin-top: 10px;
 }
 
+.panel {
+  margin-top: 40px;
+  border: none;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.panel-body h3 {
+  text-decoration: underline;
+}
+
+.panel-heading {
+  background-color: #f77a31;
+  padding: 0px;
+}
 span {
   color: #281942;
   font-size: 35px;
 }
-
-.panel {
-  width: 50%;
-  height: 30%;
+.description {
+  font-size: 20px;
+  text-decoration: underline;
 }
-
-.white-background {
-  background-color: white;
-  width: 70%;
-}
-
  .spot-pic {
     width: 100%;
     height: 325px;
@@ -35,27 +47,31 @@ span {
 
   .drop-button {
     background-color: #f77a31;
-    font-size: 24px;
+    font-size: 28px;
     border: none;
+  }
+
+  .btn-group.open .dropdown-toggle {
+    background-color: #f77a31;
   }
 
   p {
     margin-top: 20px;
     font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .drop-button-group {
     margin-top: 20px;
-    margin-bottom: 200px;
   }
 
   li {
-    font-size: 18px;
+    font-size: 22px;
     text-transform: uppercase;
   }
 
   .extra-space {
-    height: 200px;
+    height: 1200px;
   }
 
   .upper-text {

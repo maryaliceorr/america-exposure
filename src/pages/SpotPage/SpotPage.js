@@ -1,5 +1,5 @@
 import React from 'react';
-import {DropdownButton, MenuItem, Alert } from 'react-bootstrap';
+import {DropdownButton, MenuItem, Alert, Panel } from 'react-bootstrap';
 import subCategoriesRequest from '../../firebaseCalls/subCategories';
 import spotRequests from '../../firebaseCalls/spots';
 import tripRequests from '../../firebaseCalls/trip';
@@ -155,15 +155,20 @@ class SpotPage extends React.Component {
 
     return (
       <div className="SpotPage">
-        <h1 className="text-center">{spot.locationName}</h1>
-        <h3 className="national-park text-center">{spot.parkName}</h3>
-        <div className="AllSpotsInfo">
+      <Panel className="col-md-8 col-md-offset-2">
+        <Panel.Heading>
+          <Panel.Title>
+            <h1 className="text-center">{spot.locationName}</h1>
+          </Panel.Title>
+          <h3 className="national-park text-center">
+        {spot.parkName}</h3>
+        </Panel.Heading>
+        <Panel.Body>
         <div className="row">
-          <div className="col-md-2 col-sm-2"></div>
-          <div className="col-md-4 col-sm-4 text-center">
+          <div className="col-md-6 col-sm-6">
             <img className="spot-pic"src={imageUrl} alt={spot.locationName} />
           </div>
-          <div className="col-md-4 col-sm-4">
+          <div className="col-md-6 col-sm-6">
             <h3><strong>Details:</strong></h3>
             <h4><strong>Location: </strong>{spot.city}, {spot.stateAbbr}</h4>
             <h4><strong>Region: </strong>{spot.regionId}</h4>
@@ -175,11 +180,8 @@ class SpotPage extends React.Component {
             <h4><strong>Latitude: </strong>{spot.latitude}</h4>
             <h4><strong>Longitude: </strong>{spot.longitude}</h4>
           </div>
-          <div className="col-md-2 col-sm-2"></div>
         </div>
-        <div className="row">
-          <p className="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">{spot.description}</p>
-        </div>
+          <p><span className="description"><strong>Description:</strong></span><span>  </span>{spot.description}</p>
         <div className="text-center">
           {alertStuff()}
           {bucketAlertStuff()}
@@ -199,7 +201,9 @@ class SpotPage extends React.Component {
             {dropdownTrips}
           </DropdownButton>
         </div>
-      </div>
+
+        </Panel.Body>
+      </Panel>
     <div className="extra-space"></div>
   </div>
     );

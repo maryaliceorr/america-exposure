@@ -1,6 +1,18 @@
 .TripPage{
-  background-color: gainsboro;
+  background-image: url("./images/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
+
+  h1 {
+    color: white;
+  }
+
+  h3 {
+    color: white;
+  }
   .extra-space {
     height: 3000px;
   }
