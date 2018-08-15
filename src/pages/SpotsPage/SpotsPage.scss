@@ -1,9 +1,13 @@
 .SpotsPage {
-  background-color: gainsboro;
+  background-color: #3f4042;
 
+  h1 {
+    color: white;
+  }
   .spot-pic {
     height: 285px;
     width: 380px;
+    border: 1px solid #f77a31;
   }
 
   .btn{
