@@ -1,11 +1,15 @@
 .SubCategoryPage {
-  background-color: gainsboro;
-
+  // background-color: gainsboro;
+  background-color: #3f4042;
   .spot-pic {
     height: 285px;
     width: 380px;
+    border: 1px solid #f77a31;
   }
 
+  h1 {
+    color: white;
+  }
 
   .btn{
     background-color: white;
