@@ -160,8 +160,7 @@ class SpotPage extends React.Component {
           <Panel.Title>
             <h1 className="text-center">{spot.locationName}</h1>
           </Panel.Title>
-          <h3 className="national-park text-center">
-        {spot.parkName}</h3>
+          {spot.parkStatus === "true" ? <h3 className="national-park text-center">{spot.parkName}</h3> : <span></span> }
         </Panel.Heading>
         <Panel.Body>
         <div className="row">
@@ -170,18 +169,19 @@ class SpotPage extends React.Component {
           </div>
           <div className="col-md-6 col-sm-6">
             <h3><strong>Details:</strong></h3>
-            <h4><strong>Location: </strong>{spot.city}, {spot.stateAbbr}</h4>
-            <h4><strong>Region: </strong>{spot.regionId}</h4>
-            <h4><strong>Landscape Type: </strong>{spot.landscapeId}</h4>
-            <h4><strong>Best Time of Day to Shoot: </strong>{spot.timeId}</h4>
-            <h4><strong>Best Season to Shoot: </strong>{spot.seasonDescrip}</h4>
+            <h4><strong>Location: </strong>{spot.city}, {spot.stateAbb}</h4>
+            <h4><strong>Region: </strong>{spot.region}</h4>
+            <h4><strong>Landscape Category: </strong>{spot.landscapeType}</h4>
+            <h4><strong>Best Time of Day to Shoot: </strong>{spot.time}</h4>
+            <h4><strong>Best Season to Shoot: </strong>{spot.season}</h4>
             {spot.permit === true ? <h4><strong>Permit: </strong>Required</h4> : <h4>Permit: Not Required</h4> }
             <h3><strong>Coordinates:</strong></h3>
             <h4><strong>Latitude: </strong>{spot.latitude}</h4>
             <h4><strong>Longitude: </strong>{spot.longitude}</h4>
           </div>
         </div>
-          <p><span className="description"><strong>Description:</strong></span><span>  </span>{spot.description}</p>
+        {spot.seasonDescription ? <p><span className="description"><strong>Seasonality Details:</strong></span> {spot.seasonDescription}</p> : <span> </span>}
+          <p><span className="description"><strong>Description:</strong></span> {spot.description}</p>
         <div className="text-center">
           {alertStuff()}
           {bucketAlertStuff()}

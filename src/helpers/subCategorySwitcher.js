@@ -85,6 +85,15 @@ const spotCategoryMaker = (subCategoryId) => {
     case 'subCategory28':
       functionName = 'getSeasonSpots';
       break;
+      case 'subCategory29':
+      functionName = 'getLandscapeSpots';
+      break;
+      case 'subCategory30':
+      functionName = 'getLandscapeSpots';
+      break;
+      case 'subCategory31':
+      functionName = 'getLandscapeSpots';
+      break;
     default:
       functionName = '';
   }
