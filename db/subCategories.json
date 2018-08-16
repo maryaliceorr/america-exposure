@@ -138,5 +138,20 @@
     "subCategoryName":"All Year",
     "categoryId":"category04",
     "imgUrl":"./subCat/subCat28.jpg"
+  },
+  "subCategory29": {
+    "subCategoryName":"Wildlife Refuges",
+    "categoryId":"category01",
+    "imgUrl":"./subCat/subCat29.jpg"
+  },
+  "subCategory30": {
+    "subCategoryName":"City Skylines",
+    "categoryId":"category01",
+    "imgUrl":"./subCat/subCat30.jpg"
+  },
+  "subCategory31": {
+    "subCategoryName":"Prairies",
+    "categoryId":"category01",
+    "imgUrl":"./subCat/subCat31.jpg"
   }
 }
