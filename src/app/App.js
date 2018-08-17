@@ -4,7 +4,6 @@ import firebase from 'firebase';
 
 import './App.css';
 
-import Footer from '../components/Footer/Footer';
 import BucketListPage from '../pages/BucketListPage/BucketListPage';
 import Homepage from '../pages/Homepage/Homepage';
 import LoginPage from '../pages/LoginPage/LoginPage';
@@ -148,7 +147,6 @@ class App extends React.Component {
               </div>
 
         </BrowserRouter>
-        <Footer />
       </div>
     );
   }

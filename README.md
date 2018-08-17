@@ -1,15 +1,15 @@
-#AMERICA EXPOSURE
+# AMERICA EXPOSURE
 ---
-##LIVE DEMO:
+## LIVE DEMO:
 [americaexposure.com](https://www.americaexposure.com)
 
-##Application Summary:
+## Application Summary:
 This application will allow users to search for scenic outdoor landscape photography spots (some of which aren’t well known) to take photographs in the United States. The user will register/login and have options to search by landscape type, region, best time of day to shoot and best season of the year to shoot. This will feel like a choose your own adventure type application in that way. The photography spots will appear as cards. The user will also have the ability to save the locations to either a bucket list or an upcoming trip.
 
-##Users/Audience:
+## Users/Audience:
 Amateur/Professional Photographers, Road Trippers, Travelers, People with love for the outdoors
 
-##Main Features:
+## Main Features:
 - Splash Page
 - Registration/Login
 - Category/SubCategory Filtering
@@ -24,12 +24,12 @@ Amateur/Professional Photographers, Road Trippers, Travelers, People with love f
 
 ---
 
-##Capstone requirements:
+## Capstone requirements:
 - API integration
 - Full CRUD (Create, Read, Update and Delete)
 - Use of technologies over the course of class thus far
 
-##Technology & Skills:
+## Technology & Skills:
 - HTML5
 - CSS/SCSS
 - Bootstrap3/React-Bootstrap
@@ -42,7 +42,7 @@ Amateur/Professional Photographers, Road Trippers, Travelers, People with love f
 - ESLint
 
 ---
-##Screenshots
+## Screenshots
 Splash Page - states the mission of the application, acts as public landing page
 ![Splash Page]()
 Registration Page - registeration into the application
@@ -74,18 +74,18 @@ Individual Trip - view of an individual trip with saved spots that can be delete
 Bucket List - saved spots for the user to view for a later time
 ![Bucket List]()
 
-##Mobile View Screenshots
+## Mobile View Screenshots
 ![Mobile View Screenshots]()
 
 ---
 
-##2nd Iteration
+## 2nd Iteration
 - search bar functionality to search for spots based on all spot data
 - map integration via an api to display the spot's location on the individual spot page
 - map routing within a trip that shows the route a user would need to take to visit all spot locations
 - add a footer with social links added
 
-##3rd iteration and Onward
+## 3rd iteration and Onward
 - animation of the trip route on the trip page
 - suggestions/highlighting of locations to visit based on time of day
 - comments on spots for users to share experiences of visiting specific locations
@@ -105,13 +105,13 @@ Running the Application
 ---
 
 Contributors:
-[Mary Alice Orr](https://github.com/maryaliceorr)
+- [Mary Alice Orr](https://github.com/maryaliceorr)
 
 Project Manager:
-[Zoe Ames](https://github.com/zoeames)
+- [Zoe Ames](https://github.com/zoeames)
 
 Support:
-[Zoe Ames](https://github.com/zoeames)
-[Callan Morrison](https://github.com/morecallan)
-[Lauren Rouse](https://github.com/rousell)
+- [Zoe Ames](https://github.com/zoeames)
+- [Callan Morrison](https://github.com/morecallan)
+- [Lauren Rouse](https://github.com/rousell)
 
