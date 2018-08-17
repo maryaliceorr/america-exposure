@@ -44,35 +44,35 @@ Amateur/Professional Photographers, Road Trippers, Travelers, People with love f
 ---
 ## Screenshots
 Splash Page - states the mission of the application, acts as public landing page
-![Splash Page]()
+![Splash Page](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot01.png)
 Registration Page - registeration into the application
-![Registration Page]()
+![Registration Page](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot02.png)
 Login Page - for already registered users to login to the application
 ![Login Page](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot03.png)
 Homepage - leads users to the camera navigation to find spots to save to trips
 ![Homepage](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot04.png)
 Landscapes - leads to landscape subcategories
-![Landscapes]()
+![Landscapes](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot05.png)
 Regions - leads to regions subcategories
-![Regions]()
+![Regions](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot06.png)
 Time of Day - leads to time of day subcategories
-![Time of Day]()
+![Time of Day](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot07.png)
 Seasons - leads to seasons subcategories
-![Seasons]()
+![Seasons](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot08.png)
 SubCategory Example - leads to individual spot cards
 ![SubCategory Example](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot09.png)
 Individual Spot Page - shows details and description of individual spot and allows user to save a photographic spot to an upcoming trip or to bucket list
-![Individual Spot Page]()
+![Individual Spot Page](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot10.png)
 Make A Trip - allows users to make a trip using name, date and notes
 ![Make A Trip](https://github.com/maryaliceorr/america-exposure/blob/master/screenshots/screenshot11.png)
 Upcoming Trips - shows upcoming trip(s) details and allows users to edit, delete or view a trip
-![Upcoming Trips]()
+![Upcoming Trips](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot12.png)
 Edit Trip - allows users to edit the details of the trip
-![Edit Trip]()
+![Edit Trip](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot13.png)
 Individual Trip - view of an individual trip with saved spots that can be deleted
-![Individual Trip]()
+![Individual Trip](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot14.png)
 Bucket List - saved spots for the user to view for a later time
-![Bucket List]()
+![Bucket List](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot15.png)
 
 ## Mobile View Screenshots
 ![Mobile View Screenshots](https://github.com/maryaliceorr/america-exposure/blob/master/screenshots/screenshot16.png)
