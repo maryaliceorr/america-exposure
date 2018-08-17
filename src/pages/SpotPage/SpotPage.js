@@ -174,7 +174,7 @@ class SpotPage extends React.Component {
             <h4><strong>Landscape Category: </strong>{spot.landscapeType}</h4>
             <h4><strong>Best Time of Day to Shoot: </strong>{spot.time}</h4>
             <h4><strong>Best Season to Shoot: </strong>{spot.season}</h4>
-            {spot.permit === true ? <h4><strong>Permit: </strong>Required</h4> : <h4>Permit: Not Required</h4> }
+            {spot.permit === "true" ? <h4><strong>Permit: </strong>Required</h4> : <h4><strong>Permit: </strong>Not Required</h4> }
             <h3><strong>Coordinates:</strong></h3>
             <h4><strong>Latitude: </strong>{spot.latitude}</h4>
             <h4><strong>Longitude: </strong>{spot.longitude}</h4>
@@ -189,7 +189,7 @@ class SpotPage extends React.Component {
         <div className="text-center drop-button-group">
           <DropdownButton
             bsStyle={"default"}
-            title="Select A Trip"
+            title="Add to Trip"
             id="dropdown1"
             className="drop-button"
           >
