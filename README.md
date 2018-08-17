@@ -48,9 +48,9 @@ Splash Page - states the mission of the application, acts as public landing page
 Registration Page - registeration into the application
 ![Registration Page]()
 Login Page - for already registered users to login to the application
-![Login Page]()
+![Login Page](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot03.png)
 Homepage - leads users to the camera navigation to find spots to save to trips
-![Homepage]()
+![Homepage](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot04.png)
 Landscapes - leads to landscape subcategories
 ![Landscapes]()
 Regions - leads to regions subcategories
@@ -60,11 +60,11 @@ Time of Day - leads to time of day subcategories
 Seasons - leads to seasons subcategories
 ![Seasons]()
 SubCategory Example - leads to individual spot cards
-![SubCategory Example]()
+![SubCategory Example](https://raw.githubusercontent.com/maryaliceorr/america-exposure/master/screenshots/screenshot09.png)
 Individual Spot Page - shows details and description of individual spot and allows user to save a photographic spot to an upcoming trip or to bucket list
 ![Individual Spot Page]()
 Make A Trip - allows users to make a trip using name, date and notes
-![Make A Trip]()
+![Make A Trip](https://github.com/maryaliceorr/america-exposure/blob/master/screenshots/screenshot11.png)
 Upcoming Trips - shows upcoming trip(s) details and allows users to edit, delete or view a trip
 ![Upcoming Trips]()
 Edit Trip - allows users to edit the details of the trip
@@ -75,7 +75,7 @@ Bucket List - saved spots for the user to view for a later time
 ![Bucket List]()
 
 ## Mobile View Screenshots
-![Mobile View Screenshots]()
+![Mobile View Screenshots](https://github.com/maryaliceorr/america-exposure/blob/master/screenshots/screenshot16.png)
 
 ---
 
@@ -85,7 +85,7 @@ Bucket List - saved spots for the user to view for a later time
 - map routing within a trip that shows the route a user would need to take to visit all spot locations
 - add a footer with social links added
 
-## 3rd iteration and Onward
+## 3rd Iteration and Onward
 - animation of the trip route on the trip page
 - suggestions/highlighting of locations to visit based on time of day
 - comments on spots for users to share experiences of visiting specific locations
@@ -94,7 +94,7 @@ Bucket List - saved spots for the user to view for a later time
 
 ---
 
-Running the Application
+## Running the Application
 1. Clone down this repo and CD into the project.
 2. Get the API keys for Firebase.
 3. Copy src/constants.example.js to constants.js and add the Firebase API keys.
@@ -104,7 +104,8 @@ Running the Application
 
 ---
 
-Contributors:
+## Contributors:
+Owner:
 - [Mary Alice Orr](https://github.com/maryaliceorr)
 
 Project Manager:
