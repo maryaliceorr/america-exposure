@@ -1,7 +1,6 @@
 import React from 'react';
 import tripRequests from '../../firebaseCalls/trip';
 
-
 import './EditTripPage.css';
 
 class EditTripPage extends React.Component {
